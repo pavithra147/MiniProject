@@ -1,0 +1,91 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "loginDetails": [
+    {
+      "email": " pavithra89@gmail.com",
+      "password": " ",
+      "id": 1
+    },
+    {
+      "email": " pavithra89@gmail.com",
+      "password": " ",
+      "id": 2
+    },
+    {
+      "email": " abc7899@gmail.com",
+      "password": "sadd#4554",
+      "id": 3
+    },
+    {
+      "email": " abc7899@gmail.com",
+      "password": "sadd#4554",
+      "id": 4
+    },
+    {
+      "email": "def345@gmail.com",
+      "password": "jdskdjkjs@34",
+      "id": 5
+    },
+    {
+      "email": "def345@gmail.com",
+      "password": "jdskdjkjs@34",
+      "id": 6
+    },
+    {
+      "email": " fdfghvvhvh",
+      "password": "xrtgjbvggn",
+      "id": 7
+    },
+    {
+      "email": " dfghb",
+      "password": "adsfghjk",
+      "id": 8
+    },
+    {
+      "email": " dfghb",
+      "password": "adsfghjk",
+      "id": 9
+    },
+    {
+      "email": " dfghb",
+      "password": "adsfghjk",
+      "id": 10
+    },
+    {
+      "email": " dfghb",
+      "password": "adsfghjk",
+      "id": 11
+    },
+    {
+      "email": " dfghb",
+      "password": "adsfghjk",
+      "id": 12
+    },
+    {
+      "email": " dfghb",
+      "password": "adsfghjk",
+      "id": 13
+    },
+    {
+      "email": " ihjkmkkm",
+      "password": "nbhjkiuygf",
+      "id": 14
+    }
+  ]
+}

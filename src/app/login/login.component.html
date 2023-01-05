@@ -1,12 +1,28 @@
-<form class="container p-3 my-3 border col-xs-12 col-md-4 ">
+<form class="container p-3 my-3 border col-xs-12 col-md-4 bg" [formGroup]="loginForm" (ngSubmit)="submit()">
+  <div class="text-dark">
+    <h1>Sign IN</h1>
+  </div>
   <div class="form-group ">
     <label>Email address</label>
-    <input class="form-control "type="text" placeholder="Enter Email">
+    <input  class="form-control "type="email" placeholder="Enter Email" name="email" [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" formControlName="email" >
 </div>
+
+  <div class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+   <small *ngIf="loginForm.get('email')?.errors?.['required']"class="text-danger">Email address is required</small>  
+</div> 
+
 <div class="form-group">
   <label>Password</label>
-  <input class="form-control" type="Password" placeholder="Enter Password">
+  <input class="form-control" type="Password" placeholder="Enter Password"formControlName="password" [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched ">
 </div>
-<br>
-<button type="submit"class="btn btn-primary">submit</button>
+<div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+  <small *ngIf="loginForm.get('password')?.errors?.['required']"class="text-danger">Password is required</small>  
+</div>
+<div >
+  <a class="text-info"href="#">Forgot Password</a>
+</div>
+
+<div class="my-4">
+<button type="submit"class="btn btn-primary text-large">LOGIN</button>
+</div>
 </form>

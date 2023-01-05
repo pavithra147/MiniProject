@@ -1,0 +1,54 @@
+<form class="container p-4 my-3 border col-xs-6 col-md-4 bg" [formGroup]="registerForm" >
+    <div class="text-dark">
+        <h1>Register</h1>
+    </div>
+    <div class="form-group my-3 ">
+        <label>Firstname</label>
+    <input  class="form-control "type="text" name="firstName" [class.is-invalid]="(registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched)  " formControlName="firstName" >
+</div>
+
+  <div class="error" *ngIf="(registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched) ">
+   <small *ngIf="registerForm.get('firstName')?.errors?.['required']"class="text-danger">First name is required</small>  
+</div> 
+
+<div class="form-group my-3">
+        <label>Lastname</label>
+         <input  class="form-control "type="text"name="lastName" [class.is-invalid]="(registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched) " formControlName="lastName" >
+    </div>
+    
+    <div class="error" *ngIf="(registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched) ">
+     <small *ngIf="registerForm.get('lastName')?.errors?.['required']"class="text-danger">Lastname is required</small>  
+  </div> 
+    
+   <div class="form-group my-3">
+      <label>Password</label>
+      <input class="form-control" type="Password" formControlName="password" [class.is-invalid]="registerForm.get('password')?.invalid && registerForm.get('password')?.touched ">
+    </div>
+    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+      <small *ngIf="registerForm.get('password')?.errors?.['required']"class="text-danger">Password is required</small>  
+    </div>
+    <div class="form-group my-3">
+        <label>Confirm Password</label>
+        <input class="form-control" type="Password" formControlName="confirmPassword" [class.is-invalid]="registerForm.errors?.['misMatch'] ">
+        <small *ngIf="registerForm.errors?.['misMatch']"class="text-danger">Password do not found</small>  
+      
+      </div>
+      
+       <div class="formGroup my-3">
+            <label>State</label>
+            <input type="text" class="form-control" formControlName="state" >
+        </div>
+        <div class="formGroup my-3">
+            <label>City</label>
+            <input type="text" class="form-control" formControlName="city" >
+        </div>
+        <div class="formGroup my-3">
+            <label>PostalCode</label>
+            <input type="tel" class="form-control" formControlName="postalCode" >
+        </div>
+        <div class="my-3 text-align">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        
+       
+</form>
