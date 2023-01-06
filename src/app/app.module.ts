@@ -9,12 +9,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './login/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import { MenComponent } from './men/men.component';
+import { WomenComponent } from './women/women.component';
+import { KidsComponent } from './kids/kids.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
+    MenComponent,
+    WomenComponent,
+    KidsComponent,
+    HomeComponent,
   
   ],
   imports: [

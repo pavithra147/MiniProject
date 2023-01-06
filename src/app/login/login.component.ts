@@ -18,20 +18,13 @@ public loginForm!:FormGroup
   
   ngOnInit(): void {
   this.loginForm=this.form.group({
-      email:['',Validators.required],
+      email:['',[Validators.required,Validators.email]],
       password:['',Validators.required]
      })
    }
    list:any
   submit(){
-    // this.submitted=true;
-    // if(this.loginForm.invalid){
-    //   return
-    // }
-    
-
-    
-    const postData=this.loginForm.value;
+   const postData=this.loginForm.value;
     this.http.post("http://localhost:3000/loginDetails",postData).subscribe(response=>console.log(response));
     
   }

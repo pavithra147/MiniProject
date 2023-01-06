@@ -7,11 +7,30 @@ a:link{
     text-decoration: none;
 }
 
-.navbar{
-    background-color:ghostwhite;
-}
+/* .navbar{
+     background-color:black;
+}  */
 
 .text{
-    color:cornflowerblue
+    color:white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+ /* .item{
+    margin:20px;
+    padding-left:100px;
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style:italic; 
+    
+}
+
+ .text-align{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+ } */
+
+.carousel-item{
+   height:800px;
+}

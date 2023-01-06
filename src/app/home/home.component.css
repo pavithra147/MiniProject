@@ -1,0 +1,35 @@
+.item{
+    margin:20px;
+    padding-left:100px;
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style:italic; 
+    
+}
+
+ .text-align{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+ }
+
+ a:link{
+    text-decoration:none;
+ }
+
+ .align-item{
+   height:500px;
+   width:800px;
+   /* padding-left:400px; */
+   
+ }
+.carousel-inner{
+  
+   height:550px;
+  
+   
+   
+}
+.align{
+   height:500px;
+}

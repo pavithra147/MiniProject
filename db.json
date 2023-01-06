@@ -63,29 +63,47 @@
       "id": 9
     },
     {
-      "email": " dfghb",
-      "password": "adsfghjk",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "state": "",
+      "city": "",
+      "postalCode": "",
       "id": 10
     },
     {
-      "email": " dfghb",
-      "password": "adsfghjk",
+      "firstName": "Priya",
+      "lastName": "Kumar",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "state": "",
+      "city": "",
+      "postalCode": "",
       "id": 11
     },
     {
-      "email": " dfghb",
-      "password": "adsfghjk",
+      "firstName": "Priya",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "state": "",
+      "city": "",
+      "postalCode": "",
       "id": 12
-    },
-    {
-      "email": " dfghb",
-      "password": "adsfghjk",
-      "id": 13
-    },
-    {
-      "email": " ihjkmkkm",
-      "password": "nbhjkiuygf",
-      "id": 14
     }
-  ]
+  ],
+  "registerDetails": [{
+    "firstName": "Priya",
+    "lastName": "Kumar",
+    "email": "",
+    "password": "",
+    "confirmPassword": "",
+    "state": "",
+    "city": "",
+    "postalCode": ""
+  }]
 }
