@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenService } from './men.service';
 
 @Component({
   selector: 'app-men',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./men.component.css']
 })
 export class MenComponent implements OnInit {
-
-  constructor() { }
+public details : any;
+  constructor(private service: MenService) { }
 
   ngOnInit(): void {
+    this.service.getImage().subscribe(data => this.details =data)
   }
 
 }

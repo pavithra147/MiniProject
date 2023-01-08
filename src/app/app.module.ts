@@ -13,6 +13,7 @@ import { MenComponent } from './men/men.component';
 import { WomenComponent } from './women/women.component';
 import { KidsComponent } from './kids/kids.component';
 import { HomeComponent } from './home/home.component';
+import { MenService } from './men/men.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [LoginService,MenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
