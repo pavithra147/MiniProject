@@ -32,22 +32,22 @@ public loginForm!:FormGroup
     submit(){
         this.http.get<any>("http://localhost:3000/registerDetails")
         .subscribe(res=>{
-          console.log(res);
-          const user=  ((res.email === this.loginForm.value.email) && (res.password === this.loginForm.value.password));
+          console.log("response",res);
+          const user= res.find((a:any)=>{
+            return ((a.email === this.loginForm.value.email) && (a.password === this.loginForm.value.password))});
           if(user){
             alert("Login Success");
-            // this.loginForm.reset();
+            this.loginForm.reset();
             this.router.navigate(['Home'])
           }else{
             alert("User not found");
           }
-        },error=>{alert("something went wrong!!")
-
-          
-        })
+        },(error:any)=>{alert("something went wrong!!")})
+      
     }
   
  }
+
 
 
 

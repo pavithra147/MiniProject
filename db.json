@@ -96,21 +96,24 @@
       "id": 12
     }
   ],
-  "registerDetails": [{
-    "firstName": "Priya",
-    "lastName": "Kumar",
-    "email": "",
-    "password": "",
-    "confirmPassword": "",
-    "state": "",
-    "city": "",
-    "postalCode": ""
-  }
-],
-"images":[{
-   "id":1,
-   "img":"name"
-
-}]
-
+  "registerDetails": [
+    
+    {
+      "firstName": "Priya",
+      "lastName": "Kumar",
+      "email": "abc@gmail.com",
+      "password": "Abc@123",
+      "confirmPassword": "Abc@123",
+      "state": "TamilNadu",
+      "city": "Namakkal",
+      "postalCode": "637018",
+      "id": 2
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "img": "name"
+    }
+  ]
 }
