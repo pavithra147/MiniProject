@@ -1,4 +1,29 @@
-<p>men works!</p>
- <ul *ngFor="let detail of details">
-    <li>{{detail.id}},{{detail.img}}</li>
- </ul>
+
+ 
+
+
+<nav>
+   <ul class="nav text-align">
+      <li class="item my-3">Men</li>
+   </ul>
+</nav>
+
+
+<!-- <ul *ngFor="let detail of details">
+   <li>{{detail.id}}</li>
+   <li>{{detail.title}}</li>
+</ul>  -->
+
+<div class="continer">
+   <div class="row">
+      <ng-container *ngFor="let detail of details">
+         <div class="card col-md-3">
+            <img src="{{detail.image}}" alt="">
+            <h5 >{{detail.title}}</h5>
+            <p><strong>Price:</strong>${{detail.price}}</p>
+            <button class="btn btn-primary">Add to cart</button>
+         </div>
+      </ng-container>
+      
+   </div>
+</div>

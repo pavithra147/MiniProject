@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
 public loginForm!:FormGroup
 // public submitted=false
   
-  constructor(private form:FormBuilder, private http :HttpClient) { }
+  constructor(private form:FormBuilder, private http :HttpClient,private router: Router) { }
    
   
   ngOnInit(): void {
@@ -23,13 +24,32 @@ public loginForm!:FormGroup
      })
    }
    list:any
-  submit(){
-   const postData=this.loginForm.value;
-    this.http.post("http://localhost:3000/loginDetails",postData).subscribe(response=>console.log(response));
+  // submit(){
+  //  const postData=this.loginForm.value;
+  //   this.http.post("http://localhost:3000/loginDetails",postData).subscribe(response=>console.log(response));
     
-  }
+  //  }
+    submit(){
+        this.http.get<any>("http://localhost:3000/registerDetails")
+        .subscribe(res=>{
+          console.log(res);
+          const user=  ((res.email === this.loginForm.value.email) && (res.password === this.loginForm.value.password));
+          if(user){
+            alert("Login Success");
+            // this.loginForm.reset();
+            this.router.navigate(['Home'])
+          }else{
+            alert("User not found");
+          }
+        },error=>{alert("something went wrong!!")
+
+          
+        })
+    }
+  
+ }
 
 
-}
+
 
 

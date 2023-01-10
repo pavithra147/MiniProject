@@ -73,8 +73,9 @@
             <small *ngIf="registerForm.get('postalCode')?.errors?.['required']"class="text-danger">Postal Code is required</small>  
          </div> 
         <div class="my-3 text-align">
-            <button type="submit" class="btn btn-primary"[disabled]="!registerForm.valid" >Register</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid" >Register</button>
         </div>
+        <a routerLink="/login" class="text-indico">Already Registered? click Login!!</a>
         
         
 </form>

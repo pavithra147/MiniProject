@@ -11,7 +11,7 @@ public details : any;
   constructor(private service: MenService) { }
 
   ngOnInit(): void {
-    this.service.getImage().subscribe(data => this.details =data)
+    this.service.getMen().subscribe(data => this.details =data)
   }
 
 }

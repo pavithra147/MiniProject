@@ -5,5 +5,14 @@ a:link{
     font-size:20px
 }
 .bg{
-    background-color: bisque;
+    background-color: darkgray;
+    border-radius: 10px;
 }
+.text{
+    color:blueviolet
+}
+.border{
+    border:2px solid black
+}
+
+

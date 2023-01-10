@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import {PasswordValidator} from './password.validator';
 
 @Component({
@@ -12,7 +13,7 @@ export class SignupComponent implements OnInit {
   public registerForm!:FormGroup
   public address!:FormGroup
   public submitted=false
-  constructor(private form:FormBuilder,private http: HttpClient) { }
+  constructor(private form:FormBuilder,private http: HttpClient,private router:Router ) { }
 
   ngOnInit(): void {
     this.registerForm=this.form.group({
@@ -53,8 +54,12 @@ export class SignupComponent implements OnInit {
 
   registerDetails(){
     const postData=this.registerForm.value;
-    this.http.post("http://localhost:3000/registerDetails",postData).subscribe(data=>(
-      console.log(data)))
+    this.http.post("http://localhost:3000/registerDetails",postData).subscribe(data=>{
+      console.log(data);
+      alert("SignUp is Successful")
+    this.registerForm.reset();
+    this.router.navigate(['login']);
+   })
     }
   }
 
