@@ -14,5 +14,9 @@ a:link{
 .border{
     border:2px solid black
 }
+.btn{
+    position:relative;
+    left:20px;
+}
 
 

@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { WomenService } from './women.service';
 
 @Component({
   selector: 'app-women',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./women.component.css']
 })
 export class WomenComponent implements OnInit {
-
-  constructor() { }
+   public details:any
+  constructor(private service: WomenService) { }
 
   ngOnInit(): void {
+    // this.service.getMen().subscribe(data => this.details =data)
+  }
+    
   }
 
-}
+

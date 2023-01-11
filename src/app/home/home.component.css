@@ -7,7 +7,7 @@
     
 } */
 
- .text-align{
+ /* .text-align{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -22,7 +22,7 @@
    width:800px;
    /* padding-left:400px; */
    
- }
+ /* }
 .carousel-inner{
   
    height:550px;
@@ -32,4 +32,5 @@
 }
 .align{
    height:500px;
-}
+} */ 
+

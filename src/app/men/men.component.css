@@ -10,6 +10,12 @@ nav{
 .card{
     padding:20px;
     margin:40px;
+    
+   
+}
+
+.card:hover{
+    transform: scale(1.2);
 }
 .card img{
     width:200px;
@@ -21,7 +27,8 @@ nav{
     transition:0.3s ease-in-out;
     transform: scale(1.1);
 }
-.container{
-    position:absolute;
-    margin-right: 100px;
+
+.whole{
+    align-items:center;
+    margin-left: 5%;
 }

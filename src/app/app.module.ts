@@ -14,6 +14,8 @@ import { WomenComponent } from './women/women.component';
 import { KidsComponent } from './kids/kids.component';
 import { HomeComponent } from './home/home.component';
 import { MenService } from './men/men.service';
+import { AboutComponent } from './about/about.component';
+import { WomenService } from './women/women.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { MenService } from './men/men.service';
     WomenComponent,
     KidsComponent,
     HomeComponent,
+    AboutComponent,
   
   ],
   imports: [
@@ -32,7 +35,7 @@ import { MenService } from './men/men.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoginService,MenService],
+  providers: [LoginService,MenService,WomenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
