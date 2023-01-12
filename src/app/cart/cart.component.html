@@ -1,0 +1,51 @@
+
+<ng-container *ngIf="true">
+   <div class="container">
+    <div class="card-table">
+        <div class="cart">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Items Name</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead >
+                <tbody>
+                    <td>1</td>
+                    <td>shoe</td>
+                    <td>shoe image</td>
+                    <td>leather image</td>
+                    <td>110 </td>
+                    <td>1</td>
+                    <td>110</td>
+                    <td>
+                        <button class="btn "><i class="fas fa-trash"></i>Delete</button>
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   </div>
+</ng-container>
+
+
+<ng-container *ngIf="false">
+    <div class="container">
+        <div class="card">
+            <h4 class="card-title">My cart</h4>
+        </div>
+        <div class="center">
+            <img src="" alt="">
+            <h3 style="color:rgb(174, 166, 166)">Your cart is empty!!</h3>
+            <h4 style="color:rgb(177, 171, 171)">Add item to it now</h4>
+            <button class="btn btn-dark" routerLink="/home">Shop now</button>
+        </div>
+    </div>
+    
+</ng-container>

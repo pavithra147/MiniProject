@@ -7,7 +7,9 @@ import { map, Observable } from 'rxjs';
     providedIn:'root'
 })
 export class MenService{
-    constructor(private http: HttpClient){}
+    constructor(private http: HttpClient){
+        this.getMen();
+    }
 
     // getImage(): Observable<IMen[]>{
     //     return this.http.get<IMen[]>('/app/db.json');

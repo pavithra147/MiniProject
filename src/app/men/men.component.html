@@ -18,7 +18,7 @@
             <img src="{{detail.image}}" alt="">
             <h5 >{{detail.title}}</h5>
             <p><strong>Price:</strong>${{detail.price}}</p>
-            <button class="btn btn-primary">Add to cart</button>
+            <button class="btn btn-primary" (click)="addToCart(items)">Add to cart</button>
          </div>
       </ng-container>
       

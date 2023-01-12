@@ -1,1 +1,21 @@
-<p>kids works!</p>
+<nav>
+    <ul class="nav text-align">
+       <li class="item my-3">Kids</li>
+    </ul>
+ </nav>
+ 
+ <div class="whole">
+    <div class="continer">
+       <div class="row">
+          <ng-container *ngFor="let collect of collection">
+             <div class="card col-md-3">
+                <img src="{{collect.image}}" alt="image">
+                <h5 >{{collect.title}}</h5>
+                <p><strong>Price:</strong>${{collect.price}}</p>
+                <button class="btn btn-primary"(click)="kidDetails()" >Add to cart</button>
+             </div>
+          </ng-container>
+          
+       </div>
+    </div>
+    </div>

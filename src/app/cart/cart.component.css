@@ -1,0 +1,39 @@
+.card{
+    margin: 30px;
+    padding:20px;
+    height:500px;
+    width:500px;
+   margin-left: 30%;
+   flex:wrap;
+   justify-content: space-between;
+
+}
+.center{
+    position:absolute;
+    top:40%;
+    left:40%;
+    transform: transition(-50%,-50%);
+    text-align:center;
+}
+.card-title{
+    text-align: center;
+    margin-top: 5%;
+    font-family:  Georgia, Times, 'Times New Roman', serif;
+  }
+.card-table{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    border:1px solid;
+    border-radius: 5px;
+   
+}
+.btn{
+    color:red
+}
+thead{
+    border-bottom: 1px solid;
+}
+
+

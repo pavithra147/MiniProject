@@ -16,6 +16,10 @@ import { HomeComponent } from './home/home.component';
 import { MenService } from './men/men.service';
 import { AboutComponent } from './about/about.component';
 import { WomenService } from './women/women.service';
+import { KidDetailsComponent } from './kid-details/kid-details.component';
+import { CartComponent } from './cart/cart.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CartService } from './cart/cart.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,9 @@ import { WomenService } from './women/women.service';
     KidsComponent,
     HomeComponent,
     AboutComponent,
+    KidDetailsComponent,
+    CartComponent,
+    NavbarComponent,
   
   ],
   imports: [
@@ -35,7 +42,7 @@ import { WomenService } from './women/women.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoginService,MenService,WomenService],
+  providers: [LoginService,MenService,WomenService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

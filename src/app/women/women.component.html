@@ -3,3 +3,19 @@
        <li class="item my-3">women</li>
     </ul>
  </nav>
+
+ <div class="whole">
+   <div class="continer">
+      <div class="row">
+         <ng-container *ngFor="let women of list">
+            <div class="card col-md-3">
+               <img src="{{women.image}}" alt="image">
+               <h5 >{{women.title}}</h5>
+               <p><strong>Price:</strong>${{women.price}}</p>
+               <button class="btn btn-primary" (click)="addToCart(details)">Add to cart</button>
+            </div>
+         </ng-container>
+         
+      </div>
+   </div>
+   </div>

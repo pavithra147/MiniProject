@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart/cart.service';
 import { MenService } from './men.service';
 
 @Component({
@@ -8,10 +9,20 @@ import { MenService } from './men.service';
 })
 export class MenComponent implements OnInit {
 public details : any;
-  constructor(private service: MenService) { }
+items: any;
+  constructor(private service: MenService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.service.getMen().subscribe(data => this.details =data)
+    this.service.getMen().subscribe(data =>{
+       this.details =data;
+       this.details.forEach((a:any)=>{
+        Object.assign(a,{Quantity:1,Total:a.price});
+       });
+  })
+     
+  }
+  addToCart(items : any){
+     this.cartService.addToCart(items);
   }
 
 }

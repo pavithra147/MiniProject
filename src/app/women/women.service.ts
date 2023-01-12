@@ -6,8 +6,8 @@ import { map } from "rxjs";
 export class WomenService {
     constructor(private http: HttpClient){}
     
-    getMen(){
-        this.http.get<any>('http://localhost:3000/men').pipe((map((res:any)=>{return res;})))
+    getWomen(){
+       return  this.http.get<any>('http://localhost:3000/women').pipe((map((res:any)=>{return res;})))
     }
 
 } 
