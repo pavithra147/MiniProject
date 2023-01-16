@@ -11,14 +11,14 @@
 
 
 <div class="whole">
-<div class="continer">
+<div class="container">
    <div class="row">
       <ng-container *ngFor="let detail of details">
          <div class="card col-md-3">
-            <img src="{{detail.image}}" alt="">
+            <img src="{{detail.image}}" alt="image">
             <h5 >{{detail.title}}</h5>
             <p><strong>Price:</strong>${{detail.price}}</p>
-            <button class="btn btn-primary" (click)="addToCart(items)">Add to cart</button>
+            <button class="btn btn-primary " (click)="addToCart(detail)">Add to cart</button>
          </div>
       </ng-container>
       

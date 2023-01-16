@@ -14,11 +14,16 @@ details: any;
   constructor(private service: WomenService,private cartService : CartService) { }
 
   ngOnInit(): void {
-     this.service.getWomen().subscribe(data => this.list =data);
-     console.log(this.list);
+     this.service.getWomen().subscribe(data => {this.list =data
+      console.log(this.list);
+      this.list.forEach((a:any)=>{
+         Object.assign(a,{Quantity:1,Total:a.price});
+        });
+   
+   });
   }
-  addToCart(details: any){
-   this.cartService.addToCart(details);
+  addToCart(women: any){
+   this.cartService.addToCart(women);
   }
     
   }

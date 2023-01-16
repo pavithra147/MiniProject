@@ -1,6 +1,6 @@
 
 
-<div class="navbar bg-primary  navbar-fixed-top navbar card-bordered sticky-top navbar-expand-lg ">
+<!-- <div class="navbar bg-primary  navbar-fixed-top navbar card-bordered sticky-top navbar-expand-lg ">
     <div class="navbar-brand align-item-center d-flex">
       <i style="font-size:20px"class="fas fa-shoe-prints" (click)="move()">&nbsp;
         <strong style="font-size:30px">Shoe Mart</strong>
@@ -16,9 +16,12 @@
       <li class="align"><a class="text-white" routerLink='/signUp'>Sign-up</a></li>
     </ul>
   </div>
+  <div>
+    <h2>Hello,</h2>
+  </div>
     <button class="btn btn-primary">
       <i style="font-size:20px" class="fas fa-cart-plus" routerLink="/cart"></i>
-      <div style="font-size:10px" class="badge bg-success">0</div>
+      <div style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
     </button>
   </div>
   <div class="container ">
@@ -28,15 +31,32 @@
       <li class="item my-3"><a class="textcolor" routerLink="/kids">Kids</a></li>
     </ul>
   </div>
-  <hr>
-  
-  
-  
-  
-  
-  
-  
-  
+  <hr>-->
+
+  <nav>
+    <div class="container">
+      <div class="row">
+        <div class="col md-3 col-sm-3 col-3">
+          <i style="font-size:20px"class="fas fa-shoe-prints" (click)="move()">
+            <strong style="font-size:30px">ShoeMart</strong>
+          </i>
+        </div>
+        <div class="col md-9 col-sm-9 col-9 text-end">
+          <div class="menu">
+            <ul>
+              <li><a class="textcolor"routerLink="/login" >Login</a></li>
+              <li><a class="textcolor" routerLink="/signUp">Sign-up</a></li>
+              </ul>
+              <button class="btn btn-primary">
+                <i style="font-size:20px" class="fas fa-cart-plus" routerLink="/cart"></i>
+                <div style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
+              </button>
+          </div>
+        </div>
+      </div>
+      </div>
+  </nav>
+    
   
   
   

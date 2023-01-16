@@ -22,7 +22,7 @@ items: any;
      
   }
   addToCart(items : any){
-     this.cartService.addToCart(items);
+    this.cartService.addToCart(items);
   }
 
 }

@@ -16,7 +16,6 @@
   "profile": {
     "name": "typicode"
   },
- 
   "registerDetails": {
     "firstName": "Priya",
     "lastName": "Kumar",
@@ -124,148 +123,158 @@
       }
     }
   ],
-  "women": [{
-    "id": 1,
-    "title": "Glerups Unisex A-10 - Felt Shoes",
-    "price": 103,
-    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    "category": "women's shoe",
-    "image": "https://cdn.shopify.com/s/files/1/0616/9060/9870/products/Shoe_with_natural_rubber_sole_-_honey-Shoe_with_rubber_sole-AR-Grey-1_600x.jpg?v=1669711724",
-    "rating": {
-      "rate": 3.9,
-      "count": 120
+  "women": [
+    {
+      "id": 1,
+      "title": "Glerups Unisex A-10 - Felt Shoes",
+      "price": 103,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "women's shoe",
+      "image": "https://cdn.shopify.com/s/files/1/0616/9060/9870/products/Shoe_with_natural_rubber_sole_-_honey-Shoe_with_rubber_sole-AR-Grey-1_600x.jpg?v=1669711724",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 2,
+      "title": "Blundstone Unisex 1316 - Super 550 Series",
+      "price": 200,
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "category": "women's shoe",
+      "image": "https://cdn11.bigcommerce.com/s-yw2pxvv7b5/images/stencil/1280x1280/products/30256/76005/api1551ps__56752.1605215645.jpg?c=4",
+      "rating": {
+        "rate": 4.1
+      }
+    },
+    {
+      "id": 3,
+      "title": "Pendlay Women's  Weightlifting Shoes",
+      "price": 145.9,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "women's shoe",
+      "image": "https://origympersonaltrainercourses.co.uk/files/img_cache/7816/1920_1599558526_2.femaleweightliftingshoes.png?1599559071",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "id": 4,
+      "title": "Minnetonka Women's Anna 259 Black",
+      "price": 67.85,
+      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      "category": "women's shoe",
+      "image": "https://m.media-amazon.com/images/I/6134+hxO1dL._AC_UF1000,1000_QL80_.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": 5,
+      "title": " Women's Brown Mephisto",
+      "price": 400,
+      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+      "category": "women's shoe",
+      "image": "https://n.nordstrommedia.com/ImageGallery/store/product/Zoom/19/_106252479.jpg?h=365&w=240&dpr=2",
+      "rating": {
+        "rate": 4.6,
+        "count": 400
+      }
+    },
+    {
+      "id": 6,
+      "title": "Mephisto Women's Roxana ROXANA",
+      "price": 356.79,
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+      "category": "women's shoe",
+      "image": "https://www.shoes.hr/site/assets/files/19515/mephisto_roxana_5130630_1_3.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 70
+      }
+    },
+    {
+      "id": 7,
+      "title": "Timberland Women's TB015631242 Chocorua MID Hiking Boot  ",
+      "price": 125,
+      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+      "category": "women's shoe",
+      "image": "https://i5.walmartimages.com/asr/b7b5e1a9-dfad-48ab-adda-6d93f3569c40_1.64ce77e3e6bf8fb94b0fed639f7d94b3.jpeg",
+      "rating": {
+        "rate": 3,
+        "count": 400
+      }
+    },
+    {
+      "id": 8,
+      "title": "Minnetonka Women's 3351 - Sheepskin Ankle Boot",
+      "price": 75.76,
+      "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+      "category": "women's shoe",
+      "image": "https://i5.walmartimages.com/asr/1268cb47-b488-447a-81c3-a7867046c8f4.ff2302d9ec37b45544b699340372c7b1.jpeg",
+      "rating": {
+        "rate": 3.9,
+        "count": 100
+      }
     }
-  },
-  {
-    "id": 2,
-    "title": "Blundstone Unisex 1316 - Super 550 Series",
-    "price": 200,
-    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-    "category": "women's shoe",
-    "image": "https://cdn11.bigcommerce.com/s-yw2pxvv7b5/images/stencil/1280x1280/products/30256/76005/api1551ps__56752.1605215645.jpg?c=4",
-    "rating": {
-      "rate": 4.1
+  ],
+  "kids": [
+    {
+      "id": 1,
+      "title": "Sports shoes",
+      "price": 103,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "Kids shoe",
+      "image": "https://m.media-amazon.com/images/I/71mvQs5v9nL._AC._SR360,460.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      }
+    },
+    {
+      "id": 2,
+      "title": "Timberland Ankle boots for kids",
+      "price": 99.78,
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "category": "kids shoe",
+      "image": "https://png.pngitem.com/pimgs/s/343-3432519_brown-timberland-lace-up-boots-radford-6-boot.png",
+      "rating": {
+        "rate": 4.1
+      }
+    },
+    {
+      "id": 3,
+      "title": "Blundstone Kids 565 - Blunnies For Kids",
+      "price": 145.9,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "kids shoe",
+      "image": "https://hemley.com.au/wp-content/uploads/2022/10/HemleyStore-Blundstone-1468.jpg",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "id": 4,
+      "title": "Casual shoes",
+      "price": 67.85,
+      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      "category": "kids shoe",
+      "image": "https://5.imimg.com/data5/LR/OO/HW/SELLER-77407360/kids-brown-lace-up-casual-shoes-250x250.jpg",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
     }
-  },
-  {
-    "id": 3,
-    "title": "Pendlay Women's  Weightlifting Shoes",
-    "price": 145.90,
-    "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-    "category": "women's shoe",
-    "image": "https://origympersonaltrainercourses.co.uk/files/img_cache/7816/1920_1599558526_2.femaleweightliftingshoes.png?1599559071",
-    "rating": {
-      "rate": 4.7,
-      "count": 500
+  ],
+  "addtocart": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
     }
-  },
-  {
-    "id": 4,
-    "title": "Minnetonka Women's Anna 259 Black",
-    "price": 67.85,
-    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-    "category": "women's shoe",
-    "image":"https://m.media-amazon.com/images/I/6134+hxO1dL._AC_UF1000,1000_QL80_.jpg",
-    "rating": {
-      "rate": 2.1,
-      "count": 430
-    }
-  },
-  {
-    "id": 5,
-    "title": " Women's Brown Mephisto",
-    "price": 400,
-    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-    "category": "women's shoe",
-    "image": "https://n.nordstrommedia.com/ImageGallery/store/product/Zoom/19/_106252479.jpg?h=365&w=240&dpr=2",
-    "rating": {
-      "rate": 4.6,
-      "count": 400
-    }
-  },
-  {
-    "id": 6,
-    "title": "Mephisto Women's Roxana ROXANA",
-    "price": 356.79,
-    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-    "category": "women's shoe",
-    "image": "https://www.shoes.hr/site/assets/files/19515/mephisto_roxana_5130630_1_3.jpg",
-    "rating": {
-      "rate": 3.9,
-      "count": 70
-    }
-  },
-  {
-    "id": 7,
-    "title": "Timberland Women's TB015631242 Chocorua MID Hiking Boot  ",
-    "price": 125,
-    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-    "category": "women's shoe",
-    "image": "https://i5.walmartimages.com/asr/b7b5e1a9-dfad-48ab-adda-6d93f3569c40_1.64ce77e3e6bf8fb94b0fed639f7d94b3.jpeg",
-    "rating": {
-      "rate": 3,
-      "count": 400
-    }
-  },
-  {
-    "id": 8,
-    "title": "Minnetonka Women's 3351 - Sheepskin Ankle Boot",
-    "price": 75.76,
-    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-    "category": "women's shoe",
-    "image": "https://i5.walmartimages.com/asr/1268cb47-b488-447a-81c3-a7867046c8f4.ff2302d9ec37b45544b699340372c7b1.jpeg",
-    "rating": {
-      "rate": 3.9,
-      "count": 100
-    }
-  }
-],
-"kids": [{
-  "id": 1,
-  "title": "Sports shoes",
-  "price": 103,
-  "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  "category": "Kids shoe",
-  "image": "https://m.media-amazon.com/images/I/71mvQs5v9nL._AC._SR360,460.jpg",
-  "rating": {
-    "rate": 3.9,
-    "count": 120
-  }
-},
-{
-  "id": 2,
-  "title": "Timberland Ankle boots for kids",
-  "price": 99.78,
-  "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-  "category": "kids shoe",
-  "image": "https://png.pngitem.com/pimgs/s/343-3432519_brown-timberland-lace-up-boots-radford-6-boot.png",
-  "rating": {
-    "rate": 4.1
-  }
-},
-{
-  "id": 3,
-  "title": "Blundstone Kids 565 - Blunnies For Kids",
-  "price": 145.90,
-  "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-  "category": "kids shoe",
-  "image": "https://hemley.com.au/wp-content/uploads/2022/10/HemleyStore-Blundstone-1468.jpg",
-  "rating": {
-    "rate": 4.7,
-    "count": 500
-  }
-},
-{
-  "id": 4,
-  "title": "Casual shoes",
-  "price": 67.85,
-  "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-  "category": "kids shoe",
-  "image":"https://5.imimg.com/data5/LR/OO/HW/SELLER-77407360/kids-brown-lace-up-casual-shoes-250x250.jpg",
-  "rating": {
-    "rate": 2.1,
-    "count": 430
-  }
-}
-]
+  ]
 }

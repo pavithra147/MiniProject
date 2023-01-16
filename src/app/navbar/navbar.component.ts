@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(private router:Router){}
+  public totalItem:number =0;
+  public loginForm: any;
+  @Output() localStorage:any;
+  constructor(private router:Router,private cartService: CartService){}
   move(){
     this.router.navigate(['/home']);
   }
   ngOnInit(): void {
-    
+    this.cartService.getProduct().subscribe((data)=>{this.totalItem=data.length;});
   }
+  
+ 
+  
+  
 }

@@ -7,8 +7,8 @@
                 <thead>
                     <tr>
                         <th>S.No</th>
-                        <th>Items Name</th>
-                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Item Image</th>
                         <th>Description</th>
                         <th>Price</th>
                         <th>Quantity</th>
@@ -17,19 +17,24 @@
                     </tr>
                 </thead >
                 <tbody>
-                    <td>1</td>
-                    <td>shoe</td>
-                    <td>shoe image</td>
-                    <td>leather image</td>
-                    <td>110 </td>
-                    <td>1</td>
-                    <td>110</td>
+                    <tr  *ngFor="let products of product; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{products.title}}</td>
+                    <td><img style="width: 120px;"src="{{products.image}}" alt="Image"></td>
+                    <td>{{products.description}}</td>
+                    <td>{{products.price}}</td>
+                    <td>{{products.Quantity}}</td>
+                    <td>{{products.Total}}</td>
                     <td>
-                        <button class="btn "><i class="fas fa-trash"></i>Delete</button>
+                        <button class="btn "><i class="fas fa-trash" (click)="removeProduct(products)"></i>Delete</button>
                     </td>
+                </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+    <div>
+        <button class="btn btn-dark my-4 align"(click)="emptyCart()">RemoveCart</button>
     </div>
    </div>
 </ng-container>

@@ -18,14 +18,15 @@ export class CartService{
     addToCart(product:any){
         this.cartItem.push(product);
         this.ItemList.next(this.cartItem);
-         //this.getTotalPrice();
+         this.getTotalPrice();
         console.log(this.cartItem);
     }
-    getTotalPrice(){
+    getTotalPrice():number{
         let grandTotal=0;
         this.cartItem.map((a:any)=>{
             grandTotal += a.total;
-        })
+        });
+        return grandTotal;
     }
     removeCart(product: any){
         this.cartItem.map((item:any,index:any)=>{
