@@ -1,16 +1,16 @@
 
 
 <!-- <div class="navbar bg-primary  navbar-fixed-top navbar card-bordered sticky-top navbar-expand-lg ">
-    <div class="navbar-brand align-item-center d-flex">
+    <div class="col-md-3 ">
       <i style="font-size:20px"class="fas fa-shoe-prints" (click)="move()">&nbsp;
         <strong style="font-size:30px">Shoe Mart</strong>
       </i>
-    <div class="form-group">
+     <div class="form-group">
       <input type="text" placeholder="Search Products" class="form-control">
     </div>
     <span class="fas fa-search search-icon"></span>
-    </div>
-    <div class="name">
+    </div> -->
+    <!-- <div class="name">
     <ul class="nav ">
       <li class="align" ><a class="text-white" routerLink='/login'>Login</a></li>
       <li class="align"><a class="text-white" routerLink='/signUp'>Sign-up</a></li>
@@ -23,7 +23,48 @@
       <i style="font-size:20px" class="fas fa-cart-plus" routerLink="/cart"></i>
       <div style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
     </button>
-  </div>
+  </div> -->
+  <!-- <div class="container ">
+    <ul class="nav text-align">
+      <li class="item my-3"><a class="textcolor"routerLink="/men" >Men</a></li>
+      <li class="item my-3"><a class="textcolor" routerLink="/women">women</a></li>
+      <li class="item my-3"><a class="textcolor" routerLink="/kids">Kids</a></li>
+    </ul>
+  </div> -->
+ <!-- <hr> -->
+
+   <nav>
+    <div class="container">
+      <div class="row">
+        <div class="col md-3 col-sm-3 col-3">
+          <i style="font-size:20px;color:white"class="fas fa-shoe-prints" (click)="move()">
+            <strong style="font-size:30px;color:white">ShoeMart</strong>
+          </i>
+        </div>
+        <div class="col md-6 col-sm-6 col-6 text-end">
+          <div class="menu_icon" (click)="showMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu" [class.menuClass]="variable">
+            <ul>
+              <li><a class="text-white"routerLink="/login" >Login</a></li>
+              <li><a class="text-white" routerLink="/signUp">Sign-up</a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="col md-3 col-sm-3 col-3 text-end">
+          <span class="fas fa-search search-icon"(click)="searchIcon()"></span>
+          <button class="btn btn-primary">
+            <i style="font-size:25px" class="fas fa-cart-plus" routerLink="/cart"></i>
+            <div style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
+          </button>
+        </div>
+      </div>
+     </div>
+   </nav>
+
   <div class="container ">
     <ul class="nav text-align">
       <li class="item my-3"><a class="textcolor"routerLink="/men" >Men</a></li>
@@ -31,31 +72,7 @@
       <li class="item my-3"><a class="textcolor" routerLink="/kids">Kids</a></li>
     </ul>
   </div>
-  <hr>-->
-
-  <nav>
-    <div class="container">
-      <div class="row">
-        <div class="col md-3 col-sm-3 col-3">
-          <i style="font-size:20px"class="fas fa-shoe-prints" (click)="move()">
-            <strong style="font-size:30px">ShoeMart</strong>
-          </i>
-        </div>
-        <div class="col md-9 col-sm-9 col-9 text-end">
-          <div class="menu">
-            <ul>
-              <li><a class="textcolor"routerLink="/login" >Login</a></li>
-              <li><a class="textcolor" routerLink="/signUp">Sign-up</a></li>
-              </ul>
-              <button class="btn btn-primary">
-                <i style="font-size:20px" class="fas fa-cart-plus" routerLink="/cart"></i>
-                <div style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
-              </button>
-          </div>
-        </div>
-      </div>
-      </div>
-  </nav>
+  <hr> 
     
   
   

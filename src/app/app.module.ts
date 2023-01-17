@@ -20,6 +20,7 @@ import { KidDetailsComponent } from './kid-details/kid-details.component';
 import { CartComponent } from './cart/cart.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartService } from './cart/cart.service';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CartService } from './cart/cart.service';
     KidDetailsComponent,
     CartComponent,
     NavbarComponent,
+    SearchComponent,
   
   ],
   imports: [

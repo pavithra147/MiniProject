@@ -23,6 +23,7 @@ items: any;
   }
   addToCart(items : any){
     this.cartService.addToCart(items);
+    alert("You Successfully added to the Cart")
   }
 
 }

@@ -25,9 +25,9 @@ export class KidsComponent implements OnInit {
     
   }
  
-  addToCart(collect:any){
-   let kid=this.cartService.addToCart(collect);
-    return this.http.post('http://localhost:3000/addtocart',kid).subscribe(res=>console.log(res));
+  addtoCart(collect:any){
+   this.cartService.addToCart(collect);
+   alert("You Successfully added to the Cart")
   }
 
 

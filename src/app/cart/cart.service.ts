@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
@@ -5,7 +6,7 @@ import { BehaviorSubject } from "rxjs";
 export class CartService{
     public cartItem:any=[];
     public ItemList=new BehaviorSubject <any>([]);//we have to initialize the data  initially      //we can pass value to it, emit data, it can act as subscriber 
-    constructor() {}
+    constructor(private http:HttpClient) {}
 
     getProduct(){                //getter
         return this.ItemList.asObservable(); //it act observable who use this observable they can subscribe
@@ -18,13 +19,17 @@ export class CartService{
     addToCart(product:any){
         this.cartItem.push(product);
         this.ItemList.next(this.cartItem);
-         this.getTotalPrice();
+        this.getTotalPrice();
         console.log(this.cartItem);
+        return this.http.post("http://localhost:3000/addtocart",product);
+        
     }
+    
     getTotalPrice():number{
         let grandTotal=0;
         this.cartItem.map((a:any)=>{
             grandTotal += a.total;
+            console.log(grandTotal);
         });
         return grandTotal;
     }
@@ -34,7 +39,7 @@ export class CartService{
                 this.cartItem.splice(index,1);
             }
         })
-
+       this.ItemList.next(this.cartItem);
     }
     removeAllCart(){
         this.cartItem=[]

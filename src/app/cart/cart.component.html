@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="true">
+<ng-container *ngIf="product.length !=0">
    <div class="container">
     <div class="card-table">
         <div class="cart">
@@ -21,26 +21,32 @@
                     <td>{{i+1}}</td>
                     <td>{{products.title}}</td>
                     <td><img style="width: 120px;"src="{{products.image}}" alt="Image"></td>
-                    <td>{{products.description}}</td>
-                    <td>{{products.price}}</td>
-                    <td>{{products.Quantity}}</td>
-                    <td>{{products.Total}}</td>
+                    <td style="width:25%">{{products.description}}</td>
+                    <td style="width:12%">{{products.price}}</td>
+                    <td style="width:12%">{{products.Quantity}}</td>
+                    <td style="width:12%">{{products.Total}}</td>
                     <td>
                         <button class="btn "><i class="fas fa-trash" (click)="removeProduct(products)"></i>Delete</button>
                     </td>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    <td ><button class="btn btn-dark"(click)="emptyCart()">Empty Cart</button></td>
+                    <td ><button class="btn btn-success">Checkout</button></td>
+                    <td><b>Grand Total: ${{grandTotal}}</b></td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div>
-        <button class="btn btn-dark my-4 align"(click)="emptyCart()">RemoveCart</button>
-    </div>
+    <!-- <div>
+        <button class="btn btn-dark my-4 align"(click)="emptyCart()">EmptyCart</button>
+    </div> -->
    </div>
 </ng-container>
 
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="product.length ==0">
     <div class="container">
         <div class="card">
             <h4 class="card-title">My cart</h4>

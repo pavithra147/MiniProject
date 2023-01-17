@@ -18,6 +18,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getProduct().subscribe((data)=>{this.totalItem=data.length;});
   }
+  variable:boolean=false;
+  showMenu(){
+    this.variable=!this.variable;
+  }
+  searchIcon(){
+    this.router.navigate(['/search']);
+  }
   
  
   

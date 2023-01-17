@@ -7,6 +7,7 @@ import { KidDetailsComponent } from './kid-details/kid-details.component';
 import { KidsComponent } from './kids/kids.component';
 import { LoginComponent } from './login/login.component';
 import { MenComponent } from './men/men.component';
+import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
 import { WomenComponent } from './women/women.component';
 
@@ -20,6 +21,7 @@ const routes: Routes = [
  {path:'home',component:HomeComponent},
  {path:'about',component:AboutComponent},
  {path:'cart',component:CartComponent},
+ {path:'search',component:SearchComponent},
  {path:' ',redirectTo:'/home',pathMatch:'full'}
 ];
 

@@ -34,3 +34,20 @@
    height:500px;
 } */ 
 
+h1{
+   color:rgb(93, 88, 88);
+}
+.card-img-top{
+   width:50%;  
+}
+h2{
+   text-align: center;
+   padding:10%;
+   font-style:oblique;
+   font-family: Georgia, Times, 'Times New Roman', serif;
+}
+.card{
+   margin-left: 15%;
+   
+}
+

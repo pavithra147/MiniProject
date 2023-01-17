@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
      this.cartService.getProduct().subscribe(res=>{this.product=res;
-    this.grandTotal=this.cartService.getTotalPrice();})
+    this.grandTotal=this.cartService.getTotalPrice()})
   }
  
   removeProduct(products:any){
