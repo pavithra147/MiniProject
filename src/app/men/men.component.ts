@@ -22,7 +22,8 @@ items: any;
      
   }
   addToCart(items : any){
-    this.cartService.addToCart(items);
+    console.log(items);
+    this.cartService.addToCart(items).subscribe();
     alert("You Successfully added to the Cart")
   }
 

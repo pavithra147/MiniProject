@@ -47,7 +47,29 @@ h2{
    font-family: Georgia, Times, 'Times New Roman', serif;
 }
 .card{
-   margin-left: 15%;
+   /* margin-left: 15%; */
+   
+      padding:20px;
+      margin:40px;
+      cursor: pointer;
+   }
+
+.carousel{
+   display: flex;
+   justify-content: center;
+   padding-left: 5%;
    
 }
-
+.price{
+   padding:14px;
+}
+.dollar{
+   padding:18px;
+}
+.card-title{
+   font-family:  'Lucida Sans Unicode', sans-serif;
+}
+h4{
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-size: 20px;
+}

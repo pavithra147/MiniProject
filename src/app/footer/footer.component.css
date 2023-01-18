@@ -1,0 +1,23 @@
+.col{
+    width:1000px;
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+    color:white;
+    margin:5px;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+h4{
+    font-size: 18px;
+    color: white;
+}
+.column{
+    text-align:right;
+    color:white;
+}
+h5{
+    text-align: center;
+    color:white;
+}
+.full{
+    background-color: black;
+}

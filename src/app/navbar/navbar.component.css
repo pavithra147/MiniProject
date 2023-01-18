@@ -77,8 +77,18 @@ a:link{
    nav{
     padding:4px 0;
     background-color:blue;
-    
+    /* position: fixed;
+    width:100%;
+    z-index: 2; */
+   
    }
+   .main{
+    position: fixed;
+    width:100%;
+    z-index: 2;
+   }
+   
+   
    
  
   .menu ul{

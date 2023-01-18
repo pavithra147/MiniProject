@@ -1,4 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnChanges, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../cart/cart.service';
 
@@ -7,17 +8,22 @@ import { CartService } from '../cart/cart.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  public totalItem:number =0;
+export class NavbarComponent implements OnChanges {
+  public totalItem:any;
   public loginForm: any;
   @Output() localStorage:any;
-  constructor(private router:Router,private cartService: CartService){}
+  
+  constructor(private router:Router,private cartService: CartService,private http: HttpClient){
+    this.ngOnChanges();
+    
+  }
   move(){
     this.router.navigate(['/home']);
   }
-  ngOnInit(): void {
-    this.cartService.getProduct().subscribe((data)=>{this.totalItem=data.length;});
-  }
+
+ngOnChanges(): void {
+    this.cartService.getProduct().subscribe((data)=>{this.totalItem=data});
+    }
   variable:boolean=false;
   showMenu(){
     this.variable=!this.variable;

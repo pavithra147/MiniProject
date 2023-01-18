@@ -32,7 +32,7 @@
     </ul>
   </div> -->
  <!-- <hr> -->
-
+  <div class="main">
    <nav>
     <div class="container">
       <div class="row">
@@ -58,13 +58,15 @@
           <span class="fas fa-search search-icon"(click)="searchIcon()"></span>
           <button class="btn btn-primary">
             <i style="font-size:25px" class="fas fa-cart-plus" routerLink="/cart"></i>
-            <div style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
+            <div style="font-size:10px" class="badge bg-success">{{totalItem?.length}}</div>
           </button>
         </div>
       </div>
      </div>
    </nav>
-
+  </div>
+ <br>
+ <br>
   <div class="container ">
     <ul class="nav text-align">
       <li class="item my-3"><a class="textcolor"routerLink="/men" >Men</a></li>
@@ -73,6 +75,7 @@
     </ul>
   </div>
   <hr> 
+
     
   
   

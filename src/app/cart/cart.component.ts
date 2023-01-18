@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
 
 @Component({
@@ -6,20 +6,25 @@ import { CartService } from './cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnChanges {
   public product:any=[];
   public grandTotal:number=0;
-  constructor(private cartService:CartService) { }
+  constructor(private cartService:CartService) { 
+    this.ngOnChanges();
+  }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
      this.cartService.getProduct().subscribe(res=>{this.product=res;
-    this.grandTotal=this.cartService.getTotalPrice()})
+    this.grandTotal=this.cartService.getTotalPrice()});
+    console.log(this.grandTotal);
+    console.log(this.product);
   }
  
-  removeProduct(products:any){
-    this.cartService.removeCart(products)
+  removeProduct(id:any){
+    this.cartService.removeCart(id).subscribe();
+    this.ngOnChanges();
   }
-  emptyCart(){
-  this.cartService.removeAllCart();
-  }
+  // emptyCart(){
+  // this.cartService.removeAllCart();
+  // }
 }

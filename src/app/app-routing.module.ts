@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { WomenComponent } from './women/women.component';
 
 const routes: Routes = [
+  {path:' ',redirectTo:'/home',pathMatch:'full'},
  {path:'login',component:LoginComponent},
  {path:'signUp',component:SignupComponent},
  {path:'men',component:MenComponent},
@@ -21,8 +22,8 @@ const routes: Routes = [
  {path:'home',component:HomeComponent},
  {path:'about',component:AboutComponent},
  {path:'cart',component:CartComponent},
- {path:'search',component:SearchComponent},
- {path:' ',redirectTo:'/home',pathMatch:'full'}
+ {path:'search',component:SearchComponent}
+ 
 ];
 
 @NgModule({

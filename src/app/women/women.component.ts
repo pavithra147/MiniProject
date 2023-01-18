@@ -24,7 +24,8 @@ details: any;
    });
   }
   addToCart(women: any){
-   this.cartService.addToCart(women);
+   console.log(women);
+   this.cartService.addToCart(women).subscribe();
    alert("You Successfully added to the Cart")
 
   }

@@ -12,7 +12,7 @@
                 <img src="{{collect.image}}" alt="image">
                 <h5 >{{collect.title}}</h5>
                 <p><strong>Price:</strong>${{collect.price}}</p>
-                <button class="btn btn-primary"(click)="addtoCart(collect)" >Add to cart</button>
+                <button class="btn btn-primary"(click)="addtoCart(collect)" [disabled]="commonService.checkProductInCart(collect)" (click)="actionMethod($event)">Add  cart</button>
              </div>
           </ng-container>
           
