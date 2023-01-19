@@ -49,13 +49,15 @@
           </div>
           <div class="menu" [class.menuClass]="variable">
             <ul>
-              <li><a class="text-white"routerLink="/login" >Login</a></li>
-              <li><a class="text-white" routerLink="/signUp">Sign-up</a></li>
+              <li *ngIf="!loginService.getUser()"><a class="text-white"routerLink="/login"  >Login</a></li>
+              <li *ngIf="loginService.getUser()"><a class="text-white"routerLink="/login"(click)="loginService.logout()">LogOut</a></li> 
+              <li *ngIf="!loginService.getUser()"><a class="text-white" routerLink="/signUp">Sign-up</a></li>
+               <li *ngIf="loginService.getUser()"class="text-white">Welcome,{{loginService.userName}}</li> 
               </ul>
           </div>
         </div>
         <div class="col md-3 col-sm-3 col-3 text-end">
-          <span class="fas fa-search search-icon"(click)="searchIcon()"></span>
+          <!-- <span class="fas fa-search search-icon"(click)="searchIcon()"></span> -->
           <button class="btn btn-primary">
             <i style="font-size:25px" class="fas fa-cart-plus" routerLink="/cart"></i>
             <div style="font-size:10px" class="badge bg-success">{{totalItem?.length}}</div>
@@ -65,6 +67,7 @@
      </div>
    </nav>
   </div>
+ <br>
  <br>
  <br>
   <div class="container ">

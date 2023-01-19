@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 
 
@@ -16,7 +17,7 @@ public data:any;
 @Output() local=new EventEmitter<String>();
 // public submitted=false
 
-  constructor(private form:FormBuilder, private http :HttpClient,private router: Router) { }
+  constructor(private form:FormBuilder, private http :HttpClient,private router: Router,private auth:AuthService) { }
    
   
   ngOnInit(): void {
@@ -50,12 +51,16 @@ public data:any;
           }
         },(error:any)=>{alert("something went wrong!!")})
 
-       
+      
       
     }
-   
-    
   
+    
+   login(){
+    this.auth.login();
+  
+   } 
+   
  }
 
 

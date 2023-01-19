@@ -32,10 +32,14 @@ export class KidsComponent implements OnInit {
    this.cartService.addToCart(collect).subscribe();
    alert("You Successfully added to the Cart")
   }
-  actionMethod(event: any) {
-    event.target.disabled = true;
-}
+//   disableButton(event: any) {
+//     event.target.disabled = true;
+// }
 
+// disabledButtons=[];
+// disabledButton(collect:any){
+//    this.disabledButtons.push(collect);
+// }
 
 }
 

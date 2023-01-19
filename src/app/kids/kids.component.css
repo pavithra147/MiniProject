@@ -35,3 +35,16 @@ nav{
 img{
     padding-left: 22%;
 }
+.filterList{
+    display: flex;
+    flex-direction: row;
+}
+li{
+    list-style: none;
+    
+}
+.filters{
+    border-right: 1px solid rgb(172, 163, 163);
+   
+    
+}

@@ -56,9 +56,11 @@ export class SignupComponent implements OnInit {
     const postData=this.registerForm.value;
     this.http.post("http://localhost:3000/registerDetails",postData).subscribe(data=>{
       console.log(data);
+      localStorage.setItem('emailId',(this.registerForm.value.email))
+      localStorage.setItem('name',(this.registerForm.value.firstName))
       alert("SignUp is Successful")
-    this.registerForm.reset();
-    this.router.navigate(['login']);
+      this.router.navigate(['login']);
+      this.registerForm.reset();
    })
     }
   }

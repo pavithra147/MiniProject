@@ -6,25 +6,29 @@ import { CartService } from './cart.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnChanges {
+export class CartComponent implements OnInit {
   public product:any=[];
-  public grandTotal:number=0;
+  // public grandTotal:number=0;
   constructor(private cartService:CartService) { 
-    this.ngOnChanges();
+    // this.ngOnChanges();
   }
 
-  ngOnChanges(): void {
-     this.cartService.getProduct().subscribe(res=>{this.product=res;
-    this.grandTotal=this.cartService.getTotalPrice()});
-    console.log(this.grandTotal);
+  ngOnInit() {
+    this.cartService.getProduct().subscribe(res=>{this.product=res;});
+      // this.grandTotal=this.cartService.getTotalPrice()});
+    // console.log(this.grandTotal);
     console.log(this.product);
+    
   }
  
   removeProduct(id:any){
+    console.log(id);
     this.cartService.removeCart(id).subscribe();
-    this.ngOnChanges();
+    this.ngOnInit();
   }
   // emptyCart(){
   // this.cartService.removeAllCart();
   // }
+
+  
 }

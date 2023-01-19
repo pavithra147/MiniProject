@@ -11,6 +11,7 @@ export class CartService{
     getProduct(){                //getter
         // return this.ItemList.asObservable(); //it act observable who use this observable they can subscribe
   return this.http.get("http://localhost:3000/addtocart");
+  
     }
     // setProduct(product:any){
     //     this.cartItem.push(...product);     //we pushing product inside this cartItem
@@ -25,27 +26,9 @@ export class CartService{
         
     }
     
-    getTotalPrice():number{
-        let grandTotal=0;
-        this.cartItem.map((a:any)=>{
-            grandTotal += a.total;
-            console.log(grandTotal);
-        });
-        return grandTotal;
-    }
     removeCart(product: any){
-    //     this.cartItem.map((item:any,index:any)=>{
-    //         if(product.id ===item.id){
-    //             this.cartItem.splice(index,1);
-    //         }
-    //     })
-    //    this.ItemList.next(this.cartItem);
     return this.http.delete(`http://localhost:3000/addtocart/${product}`);
     }
-    // removeAllCart(){
-    //      this.cartItem=[]
-    //      this.ItemList.next(this.cartItem);
-       
-    // }
+   
 
 }

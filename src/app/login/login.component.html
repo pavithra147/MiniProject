@@ -23,11 +23,7 @@
   <small *ngIf="loginForm.get('password')?.errors?.['minlength']"class="text-danger">Password need to have atleast 5 characters</small>    
 </div>
 <div class="my-4">
-  <a class="text"href="#">Forgot Password</a>
-</div>
-
-<div class="my-4">
-<button type="submit"class="btn btn-primary text-align">LOGIN</button>
+<button type="submit"class="btn btn-primary text-align" (click)="login()">LOGIN</button>
 </div>
 <a routerLink="/signUp" class="text-indico ">New User? Click Signup</a>
 </form>

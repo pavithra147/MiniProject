@@ -17,14 +17,14 @@
     "name": "typicode"
   },
   "registerDetails": {
-    "firstName": "Priya",
+    "firstName": "Abishek",
     "lastName": "Kumar",
-    "email": "abc@gmail.com",
-    "password": "Abc@123",
-    "confirmPassword": "Abc@123",
-    "state": "Tamilnadu",
-    "city": "Namakkal",
-    "postalCode": "637018"
+    "email": "abishek@56gmail.com",
+    "password": "Abi@34",
+    "confirmPassword": "Abi@34",
+    "state": "TamilNadu",
+    "city": "Salem",
+    "postalCode": "637028"
   },
   "men": [
     {
@@ -425,47 +425,5 @@
       ]
     }
   ],
-  "addtocart": [
-    {
-      "id": 1,
-      "title": "Sports shoes",
-      "price": 103,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "Kids shoe",
-      "image": "https://m.media-amazon.com/images/I/71mvQs5v9nL._AC._SR360,460.jpg",
-      "rating": {
-        "rate": 3.9,
-        "count": 120
-      },
-      "size": [
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "Quantity": 1,
-      "Total": 103
-    },
-    {
-      "id": 2,
-      "title": "Timberland Ankle boots for kids",
-      "price": 99.78,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-      "category": "kids shoe",
-      "image": "https://png.pngitem.com/pimgs/s/343-3432519_brown-timberland-lace-up-boots-radford-6-boot.png",
-      "rating": {
-        "rate": 4.1
-      },
-      "size": [
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "Quantity": 1,
-      "Total": 99.78
-    }
-  ]
+  "addtocart": []
 }

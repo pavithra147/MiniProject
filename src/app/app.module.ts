@@ -24,6 +24,9 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonService } from './common/common.service';
 import { CategoriesFilterPipe } from './categories-filter.pipe';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { TotalPipe } from './total.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import { CategoriesFilterPipe } from './categories-filter.pipe';
     SearchComponent,
     FooterComponent,
     CategoriesFilterPipe,
+    TotalPipe,
   
   ],
   imports: [
@@ -49,7 +53,7 @@ import { CategoriesFilterPipe } from './categories-filter.pipe';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoginService,MenService,WomenService,CartService,CommonService],
+  providers: [LoginService,MenService,WomenService,CartService,CommonService,AuthGuardService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
