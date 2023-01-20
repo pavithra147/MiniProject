@@ -4,7 +4,7 @@
     </ul>
  </nav>
  <div class="filterList">
- <div class="filters">
+ <!-- <div class="filters">
    <p><b>Brand</b></p>
    <ul style="width:200px">
       <input type="checkbox">&nbsp;
@@ -32,7 +32,7 @@
 
    </ul>
    <hr>
- </div>
+ </div> -->
  
  <div class="whole">
     <div class="continer">
@@ -42,7 +42,7 @@
                 <img src="{{collect.image}}" alt="image">
                 <h5 >{{collect.title}}</h5>
                 <p><strong>Price:</strong>${{collect.price}}</p>
-                <button class="btn btn-primary"(click)="addtoCart(collect)" [disabled]="commonService.checkProductInCart(collect)">Add  cart</button>
+                <button class="btn btn-primary"(click)="addtoCart(collect)" [disabled]="commonService.getAddToCart()">Add  cart</button>
              </div>
           </ng-container>
           

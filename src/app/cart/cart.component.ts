@@ -8,6 +8,8 @@ import { CartService } from './cart.service';
 })
 export class CartComponent implements OnInit {
   public product:any=[];
+  grandtotal!: number;
+  
   // public grandTotal:number=0;
   constructor(private cartService:CartService) { 
     // this.ngOnChanges();
@@ -26,9 +28,23 @@ export class CartComponent implements OnInit {
     this.cartService.removeCart(id).subscribe();
     this.ngOnInit();
   }
-  // emptyCart(){
-  // this.cartService.removeAllCart();
-  // }
+  incrementQuantity(products:any){
+    
+    console.log(products.Quantity);
+    if(products.Quantity !=5){
+    products.Quantity=products.Quantity +1;
+    }
+   // this.cartService.addToCart(products).subscribe();
+  }
+  decrementQuantity(products:any){
+    console.log(products.Quantity);
+    if(products.Quantity !=1){
+    products.Quantity=products.Quantity -1;
+    }
+  }
+  grandTotal(product:any){
+  this.grandtotal=product.Quantity*product.price;
+  }
 
   
 }

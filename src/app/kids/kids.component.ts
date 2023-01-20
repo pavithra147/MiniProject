@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../cart/cart.service';
 import { CommonService } from '../common/common.service';
 import { KidsService } from './kids.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-kids',
@@ -15,7 +15,7 @@ export class KidsComponent implements OnInit {
   public collection: any
   public kids:any
   constructor(private kidsService: KidsService,private activatedRoute: ActivatedRoute,private router:Router,private cartService:CartService, private http:HttpClient,
-    public commonService:CommonService) { }
+    public commonService:CommonService,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.kidsService.getKids().subscribe(data=>{this.collection=data
@@ -30,7 +30,8 @@ export class KidsComponent implements OnInit {
   addtoCart(collect:any){
     console.log(collect);
    this.cartService.addToCart(collect).subscribe();
-   alert("You Successfully added to the Cart")
+   localStorage.setItem('cart',JSON.stringify( collect.id));
+   this.snackbar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']})
   }
 //   disableButton(event: any) {
 //     event.target.disabled = true;

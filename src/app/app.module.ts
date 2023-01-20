@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from './login/login.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -27,6 +26,9 @@ import { CategoriesFilterPipe } from './categories-filter.pipe';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { TotalPipe } from './total.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -51,8 +53,15 @@ import { TotalPipe } from './total.pipe';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'top'
+    }),
+    BrowserAnimationsModule,
+    MatSnackBarModule
+    
+   ],
   providers: [LoginService,MenService,WomenService,CartService,CommonService,AuthGuardService,AuthService],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,30 @@
+ @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";  
+/* #toast-container > div {
+    opacity: 1;
+  }
+  .toast {
+    font-size: initial !important;
+    border: initial !important;
+    backdrop-filter: blur(0) !important;
+  }
+  .toast-success {
+    background-color: #51A351 !important;
+  }
+  .toast-error {
+    background-color: #BD362F !important;
+  }
+  .toast-info {
+    background-color: #2F96B4 !important;
+  }
+  .toast-warning {
+    background-color: #F89406 !important;
+  } */
+
+  .blue-snackbar {
+    background: rgb(90, 182, 90);
+    color: black;
+  }
+  .red-snackbar{
+    background:rgb(224, 68, 68);
+    color: black;
+  }

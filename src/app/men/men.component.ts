@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart/cart.service';
 import { MenService } from './men.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-men',
   templateUrl: './men.component.html',
@@ -10,7 +10,7 @@ import { MenService } from './men.service';
 export class MenComponent implements OnInit {
 public details : any;
 items: any;
-  constructor(private service: MenService, private cartService: CartService) { }
+  constructor(private service: MenService, private cartService: CartService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.service.getMen().subscribe(data =>{
@@ -24,7 +24,7 @@ items: any;
   addToCart(items : any){
     console.log(items);
     this.cartService.addToCart(items).subscribe();
-    alert("You Successfully added to the Cart")
+    this.snackBar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']})
   }
 
 }

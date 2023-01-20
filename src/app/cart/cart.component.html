@@ -23,8 +23,14 @@
                     <td><img style="width: 120px;"src="{{products.image}}" alt="Image"></td>
                     <td style="width:25%">{{products.description}}</td>
                     <td style="width:12%">{{products.price}}</td>
-                    <td style="width:12%">{{products.Quantity}}</td>
-                    <td style="width:12%">{{products.Total}}</td>
+                    <td style="width:12%">
+                        <button class="btn btn-white text-dark" (click)="incrementQuantity(products)">
+                            <i class="fas fa-plus"></i>
+                        </button>{{products.Quantity}}<button class="btn btn-white text-dark">
+                            <i class="fas fa-minus"(click)="decrementQuantity(products)"></i>
+                        </button>
+                    </td>
+                    <td style="width:12%">{{products.Total*products.Quantity}}</td>
                     <td>
                         <button class="btn "><i class="fas fa-trash" (click)="removeProduct(products.id)"></i>Delete</button>
                     </td>
@@ -32,8 +38,9 @@
                 <tr>
                     <td colspan="4"></td>
                     <!-- <td ><button class="btn btn-dark"(click)="emptyCart()">Empty Cart</button></td> -->
-                    <td ><button class="btn btn-success">Checkout</button></td>
-                    <td><b>Grand Total: $ {{product |total:"price"}}</b></td>
+                    <td ><button class="btn btn-primary text-white">Checkout</button></td>
+                    <td><b>Grand Total: $ {{product |total:"Total"}}</b></td>
+                    <!-- <button (click)="grandTotal(product)"></button> -->
                 </tr>
                 </tbody>
             </table>
@@ -55,7 +62,7 @@
             <img src="" alt="">
             <h3 style="color:rgb(174, 166, 166)">Your cart is empty!!</h3>
             <h4 style="color:rgb(177, 171, 171)">Add item to it now</h4>
-            <button class="btn btn-dark" routerLink="/home">Shop now</button>
+            <button class="btn btn-primary text-white" routerLink="/home">Shop now</button>
         </div>
     </div>
     

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart/cart.service';
 import { WomenService } from './women.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-women',
   templateUrl: './women.component.html',
@@ -12,7 +12,8 @@ import { WomenService } from './women.service';
 export class WomenComponent implements OnInit {
    public list:any
 details: any;
-  constructor(private service: WomenService,private cartService : CartService,private http:HttpClient) { }
+  constructor(private service: WomenService,private cartService : CartService,private http:HttpClient,
+   private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
      this.service.getWomen().subscribe(data => {this.list =data
@@ -26,8 +27,7 @@ details: any;
   addToCart(women: any){
    console.log(women);
    this.cartService.addToCart(women).subscribe();
-   alert("You Successfully added to the Cart")
-
+   this.snackBar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']})
   }
     
   }

@@ -9,20 +9,21 @@ export class CommonService {
   public  disabledButtons:any;
   constructor(private http:HttpClient,private cart:CartService) { }
   getAddToCart(){
-      this.cart.getProduct().subscribe(res=>{
-        this.disabledButtons=res;
-        console.log(this.disabledButtons);
-         })  
+      this.disabledButtons=localStorage.getItem('cart');
+     
   }
   public checkProductInCart(product: any):boolean{
    
-    // let check=this.disabledButtons.find((a:any)=>{
-    //  if( (a.id)===(product.id)){
-        
-    //        return a;
-    //    }
-     
-    //  });
-      return false;
+let user=this.disabledButtons.find((cart:any)=>{
+  //console.log(user);
+  console.log(cart);
+   if( (cart.id)===(product.id)){
+         return cart;     
+    }
+        });
+   return user.length>0
   }
+
+
+
 }
