@@ -9,16 +9,9 @@ import { CartService } from './cart.service';
 export class CartComponent implements OnInit {
   public product:any=[];
   grandtotal!: number;
-  
-  // public grandTotal:number=0;
-  constructor(private cartService:CartService) { 
-    // this.ngOnChanges();
-  }
-
-  ngOnInit() {
+  constructor(private cartService:CartService) { }
+ngOnInit() {
     this.cartService.getProduct().subscribe(res=>{this.product=res;});
-      // this.grandTotal=this.cartService.getTotalPrice()});
-    // console.log(this.grandTotal);
     console.log(this.product);
     
   }
@@ -34,7 +27,7 @@ export class CartComponent implements OnInit {
     if(products.Quantity !=5){
     products.Quantity=products.Quantity +1;
     }
-   // this.cartService.addToCart(products).subscribe();
+  
   }
   decrementQuantity(products:any){
     console.log(products.Quantity);

@@ -9,4 +9,14 @@ export class AuthService{
     isAuthenticated(){
         return this.isLoggedIn;
     }
+    isAddToCart=false;
+    add(){
+        this.isAddToCart=true;
+    }
+    addOut(){
+        this.isAddToCart=false;
+    }
+    isAdded(){
+        return this.isAddToCart;
+    }
 }

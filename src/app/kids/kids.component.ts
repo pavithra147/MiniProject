@@ -5,6 +5,9 @@ import { CartService } from '../cart/cart.service';
 import { CommonService } from '../common/common.service';
 import { KidsService } from './kids.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthGuardService } from '../auth-guard.service';
+import { ThisReceiver } from '@angular/compiler';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-kids',
@@ -15,7 +18,7 @@ export class KidsComponent implements OnInit {
   public collection: any
   public kids:any
   constructor(private kidsService: KidsService,private activatedRoute: ActivatedRoute,private router:Router,private cartService:CartService, private http:HttpClient,
-    public commonService:CommonService,private snackbar:MatSnackBar) { }
+    public commonService:CommonService,private snackbar:MatSnackBar,private auth:AuthService) { }
 
   ngOnInit(): void {
     this.kidsService.getKids().subscribe(data=>{this.collection=data
@@ -30,17 +33,19 @@ export class KidsComponent implements OnInit {
   addtoCart(collect:any){
     console.log(collect);
    this.cartService.addToCart(collect).subscribe();
-   localStorage.setItem('cart',JSON.stringify( collect.id));
+   localStorage.setItem('cart',( collect.id));
    this.snackbar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']})
   }
-//   disableButton(event: any) {
-//     event.target.disabled = true;
-// }
 
-// disabledButtons=[];
-// disabledButton(collect:any){
-//    this.disabledButtons.push(collect);
-// }
-
+ 
+login(){
+  this.auth.login();
+}
+add(){
+  this.auth.add();
+}
+addOut(){
+  this.auth.addOut();
+}
 }
 

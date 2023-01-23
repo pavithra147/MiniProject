@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MenComponent implements OnInit {
 public details : any;
 items: any;
+
   constructor(private service: MenService, private cartService: CartService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {

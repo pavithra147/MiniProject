@@ -10,12 +10,7 @@ export class MenService{
     constructor(private http: HttpClient){
         this.getMen();
     }
-
-    // getImage(): Observable<IMen[]>{
-    //     return this.http.get<IMen[]>('/app/db.json');
-    // }
-
-    getMen(){
+   getMen(){
         return this.http.get<any>('http://localhost:3000/men').pipe((map((res:any)=>{return res;})))
     }
 }

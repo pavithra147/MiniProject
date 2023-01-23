@@ -15,7 +15,7 @@ export class CommonService {
   public checkProductInCart(product: any):boolean{
    
 let user=this.disabledButtons.find((cart:any)=>{
-  //console.log(user);
+  
   console.log(cart);
    if( (cart.id)===(product.id)){
          return cart;     

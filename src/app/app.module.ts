@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { LoginService } from './login/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
@@ -15,20 +14,18 @@ import { HomeComponent } from './home/home.component';
 import { MenService } from './men/men.service';
 import { AboutComponent } from './about/about.component';
 import { WomenService } from './women/women.service';
-import { KidDetailsComponent } from './kid-details/kid-details.component';
 import { CartComponent } from './cart/cart.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartService } from './cart/cart.service';
-import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonService } from './common/common.service';
-import { CategoriesFilterPipe } from './categories-filter.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { TotalPipe } from './total.pipe';
-import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -40,26 +37,21 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     KidsComponent,
     HomeComponent,
     AboutComponent,
-    KidDetailsComponent,
     CartComponent,
     NavbarComponent,
-    SearchComponent,
     FooterComponent,
-    CategoriesFilterPipe,
-    TotalPipe,
-  
+    CheckoutComponent,
+    TotalPipe
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot({
-      timeOut: 4000,
-      positionClass: 'top'
-    }),
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    FormsModule
     
    ],
   providers: [LoginService,MenService,WomenService,CartService,CommonService,AuthGuardService,AuthService],

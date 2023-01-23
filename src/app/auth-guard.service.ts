@@ -7,17 +7,6 @@ import { LoginService } from "./login/login.service";
 export class AuthGuardService implements CanActivate{
     constructor(private authService: AuthService,private router:Router,private loginService:LoginService){}
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean  {
-        //   let isLoggedIn=this.authService.isAuthenticated();
-        //   if(isLoggedIn){
-        //     return true;
-        //   }  
-        //   else{
-        //     alert("You have to Login")
-        //     this.router.navigate(['/login']);
-            
-        //   }
-        //   return true;
-        // }
     if(this.loginService.login()){
         return true;
     }

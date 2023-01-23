@@ -1,38 +1,4 @@
-
-
-<!-- <div class="navbar bg-primary  navbar-fixed-top navbar card-bordered sticky-top navbar-expand-lg ">
-    <div class="col-md-3 ">
-      <i style="font-size:20px"class="fas fa-shoe-prints" (click)="move()">&nbsp;
-        <strong style="font-size:30px">Shoe Mart</strong>
-      </i>
-     <div class="form-group">
-      <input type="text" placeholder="Search Products" class="form-control">
-    </div>
-    <span class="fas fa-search search-icon"></span>
-    </div> -->
-    <!-- <div class="name">
-    <ul class="nav ">
-      <li class="align" ><a class="text-white" routerLink='/login'>Login</a></li>
-      <li class="align"><a class="text-white" routerLink='/signUp'>Sign-up</a></li>
-    </ul>
-  </div>
-  <div>
-    <h2>Hello,</h2>
-  </div>
-    <button class="btn btn-primary">
-      <i style="font-size:20px" class="fas fa-cart-plus" routerLink="/cart"></i>
-      <div style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
-    </button>
-  </div> -->
-  <!-- <div class="container ">
-    <ul class="nav text-align">
-      <li class="item my-3"><a class="textcolor"routerLink="/men" >Men</a></li>
-      <li class="item my-3"><a class="textcolor" routerLink="/women">women</a></li>
-      <li class="item my-3"><a class="textcolor" routerLink="/kids">Kids</a></li>
-    </ul>
-  </div> -->
- <!-- <hr> -->
-  <div class="main">
+<div class="main">
    <nav>
     <div class="container">
       <div class="row">
@@ -57,7 +23,6 @@
           </div>
         </div>
         <div class="col md-3 col-sm-3 col-3 text-end">
-          <!-- <span class="fas fa-search search-icon"(click)="searchIcon()"></span> -->
           <button class="btn btn-primary">
             <i style="font-size:25px" class="fas fa-cart-plus" routerLink="/cart"></i>
             <div  *ngIf="loginService.getUser()" style="font-size:10px" class="badge bg-success">{{totalItem?.length}}</div>
