@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 public loginForm!:FormGroup
 public data:any;
 
-@Output() local=new EventEmitter<String>();
+
 constructor(private form:FormBuilder, private http :HttpClient,private router: Router,private auth:AuthService
     ,private snackBar:MatSnackBar) { }
     ngOnInit(): void {
@@ -41,7 +41,8 @@ constructor(private form:FormBuilder, private http :HttpClient,private router: R
             this.snackBar.open("User Not Found!!!",'',{duration:3000,
               verticalPosition:'top',panelClass:['red-snackbar']});
           }
-        },(error:any)=>{alert("something went wrong!!")})
+        },(error:any)=>{ this.snackBar.open("Something went wrong",'',{duration:3000,
+          verticalPosition:'top',panelClass: ['blue-snackbar']});})
  }
  login(){
     this.auth.login();
