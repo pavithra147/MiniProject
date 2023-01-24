@@ -26,6 +26,8 @@ import { TotalPipe } from './total.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { FilterPipe } from './filter.pipe';
+import { AllProductsComponent } from './all-products/all-products.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     NavbarComponent,
     FooterComponent,
     CheckoutComponent,
-    TotalPipe
+    TotalPipe,
+    FilterPipe,
+    AllProductsComponent
     
   ],
   imports: [

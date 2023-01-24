@@ -1,0 +1,26 @@
+<div class="container ">
+    <ul class="nav text-align">
+      <!-- <li class="item my-3"><a class="textcolor"(click)="filter('')">All Products</a></li> -->
+      <li class="item my-3"><a class="textcolor"(click)="filter('Men')">Men</a></li>
+      <li class="item my-3"><a class="textcolor"  (click)="filter('Women')">Women</a></li>
+      <li class="item my-3"><a class="textcolor"  (click)="filter('Kids')">Kids</a></li>
+      
+    </ul>
+  </div>
+<div class="filterList">
+<div class="whole">
+    <div class="container">
+       <div class="row">
+          <ng-container *ngFor="let collect of filterCategory">
+             <div class="card col-md-3">
+                <img src="{{collect.image}}" alt="image">
+                <h5 >{{collect.title}}</h5>
+                <p><strong>Price:</strong>${{collect.price}}</p>
+                <button class="btn btn-primary"(click)="addtoCart(collect)" >Add  cart</button>
+             </div>
+          </ng-container>
+          
+       </div>
+    </div>
+    </div>
+</div>

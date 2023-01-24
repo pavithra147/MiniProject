@@ -34,7 +34,8 @@ export class KidsComponent implements OnInit {
     console.log(collect);
    this.cartService.addToCart(collect).subscribe();
    localStorage.setItem('cart',( collect.id));
-   this.snackbar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']})
+   this.snackbar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']});
+  //  
   }
 
  
@@ -47,5 +48,14 @@ add(){
 addOut(){
   this.auth.addOut();
 }
-}
 
+// public cartNumber:number=0;
+//   cartNumberFunc(){
+//     var value=JSON.parse(localStorage.getItem('products')!);
+//    this.cartNumber= value.length;
+//    this.cartService.cartSubject.next(this.cartNumber); 
+//    console.log(this.cartNumber);
+//   }
+// }
+
+}

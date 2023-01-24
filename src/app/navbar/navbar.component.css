@@ -78,3 +78,8 @@
         transition: 0.4s ease-in-out;
     }
   }
+
+  .form-control{
+    margin-top: 2%;
+    /* margin-left:200%; */
+  }

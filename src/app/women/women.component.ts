@@ -27,8 +27,17 @@ details: any;
   addToCart(women: any){
    console.log(women);
    this.cartService.addToCart(women).subscribe();
-   this.snackBar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']})
+   this.snackBar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']});
+   //this.cartNumberFunc();
   }
+
+  // public cartNumber:number=0;
+  // cartNumberFunc(){
+  //   var value=JSON.parse(localStorage.getItem('products')!);
+  //  this.cartNumber= value.length;
+  //  this.cartService.cartSubject.next(this.cartNumber); 
+  //  console.log(this.cartNumber);
+  // }
     
   }
 

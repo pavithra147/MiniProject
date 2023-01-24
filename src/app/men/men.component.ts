@@ -23,9 +23,17 @@ items: any;
      
   }
   addToCart(items : any){
-    console.log(items);
+    console.log("product",items);
     this.cartService.addToCart(items).subscribe();
     this.snackBar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']})
+    //this.cartNumberFunc();
   }
+  // public cartNumber:number=0;
+  // cartNumberFunc(){
+  //   var value=JSON.parse(localStorage.getItem('products')!);
+  //  this.cartNumber= value.length;
+  //  this.cartService.cartSubject.next(this.cartNumber); 
+  //  console.log(this.cartNumber);
+  // }
 
 }

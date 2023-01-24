@@ -38,6 +38,9 @@ ngOnInit() {
   grandTotal(product:any){
   this.grandtotal=product.Quantity*product.price;
   }
+  emptyCart(){
+     this.cartService.removeAllCart();
+  }
 
   
 }
