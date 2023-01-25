@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +13,7 @@ export class SignupComponent implements OnInit {
   public registerForm!:FormGroup
   public address!:FormGroup
   public submitted=false
-  constructor(private form:FormBuilder,private http: HttpClient,private router:Router ) { }
+  constructor(private form:FormBuilder,private http: HttpClient,private router:Router,private SnackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
     this.registerForm=this.form.group({
@@ -47,7 +47,7 @@ export class SignupComponent implements OnInit {
      if(this.registerForm.invalid){
      return
      }
-    alert("You successfully registered")
+    this.SnackBar.open("You successfully registered",'',{duration:4000,verticalPosition:'top',panelClass:['blue-snackbar']})
 
     
   }
@@ -56,9 +56,8 @@ export class SignupComponent implements OnInit {
     const postData=this.registerForm.value;
     this.http.post("http://localhost:3000/registerDetails",postData).subscribe(data=>{
       console.log(data);
-      localStorage.setItem('emailId',(this.registerForm.value.email))
-      localStorage.setItem('name',(this.registerForm.value.firstName))
-      alert("SignUp is Successful")
+      
+      this.SnackBar.open("SignUp is Successful",'',{duration:4000,verticalPosition:'top',panelClass:['blue-snackbar']})
       this.router.navigate(['login']);
       this.registerForm.reset();
    })

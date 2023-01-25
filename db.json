@@ -17,14 +17,14 @@
     "name": "typicode"
   },
   "registerDetails": {
-    "firstName": "Abishek",
-    "lastName": "Kumar",
-    "email": "abishek@56gmail.com",
-    "password": "Abi@34",
-    "confirmPassword": "Abi@34",
-    "state": "TamilNadu",
-    "city": "Salem",
-    "postalCode": "637028"
+    "firstName": "Priya",
+    "lastName": "Shree",
+    "email": "priya09@gmail.com",
+    "password": "Priya@123",
+    "confirmPassword": "Priya@123",
+    "state": "Tamil Nadu",
+    "city": "Namakkal",
+    "postalCode": "637018"
   },
   "products": [
     {
@@ -421,27 +421,5 @@
       ]
     }
   ],
-  "addtocart": [
-    {
-      "id": 17,
-      "title": "Sports shoes",
-      "price": 103,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "Kids",
-      "image": "https://m.media-amazon.com/images/I/71mvQs5v9nL._AC._SR360,460.jpg",
-      "rating": {
-        "rate": 3.9,
-        "count": 120
-      },
-      "size": [
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "Quantity": 1,
-      "Total": 103
-    }
-  ]
+  "addtocart": []
 }

@@ -7,13 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginService } from './login/login.service';
 import {HttpClientModule} from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
-import { MenComponent } from './men/men.component';
-import { WomenComponent } from './women/women.component';
-import { KidsComponent } from './kids/kids.component';
 import { HomeComponent } from './home/home.component';
-import { MenService } from './men/men.service';
 import { AboutComponent } from './about/about.component';
-import { WomenService } from './women/women.service';
 import { CartComponent } from './cart/cart.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartService } from './cart/cart.service';
@@ -28,15 +23,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FilterPipe } from './filter.pipe';
 import { AllProductsComponent } from './all-products/all-products.component';
+import { productService } from './all-products/product.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    MenComponent,
-    WomenComponent,
-    KidsComponent,
     HomeComponent,
     AboutComponent,
     CartComponent,
@@ -58,7 +51,7 @@ import { AllProductsComponent } from './all-products/all-products.component';
     FormsModule
     
    ],
-  providers: [LoginService,MenService,WomenService,CartService,CommonService,AuthGuardService,AuthService],
+  providers: [LoginService,CartService,CommonService,AuthGuardService,AuthService,productService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { Component, OnChanges, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CartService } from '../cart/cart.service';
+import { CommonService } from '../common/common.service';
 import { LoginService } from '../login/login.service';
 
 @Component({
@@ -11,24 +12,22 @@ import { LoginService } from '../login/login.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+[x: string]: any;
   public totalItem:any;
   public loginForm: any;
   constructor(private router:Router,private cartService: CartService,private http: HttpClient,
-    private auth:AuthService,public loginService: LoginService){
-    //  this.cartService.cartSubject.subscribe((data)=>{
-    //   this.itemAdded=data;
-    //  })
+    private auth:AuthService,public loginService: LoginService,private commonService:CommonService){
+     
     }
   move(){
     this.router.navigate(['/home']);
   }
-  public itemAdded:number=0;
-ngOnInit(): void {
-    this.cartService.getProduct().subscribe((data)=>{this.totalItem=data; });
-     
-  }
   
   variable:boolean=false;
+  ngOnInit(): void {
+      this.cartService.getProduct().subscribe((data)=>{this.totalItem=data; });
+       
+    }
   showMenu(){
     this.variable=!this.variable;
   }
@@ -43,6 +42,8 @@ ngOnInit(): void {
    this.auth.logout();
 
  }
+ filter(category:any){
+   this.commonService.click(category);
+ }
  
-  
 }

@@ -9,6 +9,7 @@ import { CartService } from './cart.service';
 export class CartComponent implements OnInit {
   public product:any=[];
   grandtotal!: number;
+  
   constructor(private cartService:CartService) { }
 ngOnInit() {
     this.cartService.getProduct().subscribe(res=>{this.product=res;});
@@ -35,12 +36,25 @@ ngOnInit() {
     products.Quantity=products.Quantity -1;
     }
   }
-  grandTotal(product:any){
-  this.grandtotal=product.Quantity*product.price;
-  }
+  // grandTotal(product:any){
+  // this.grandtotal=product.Quantity*product.price;
+  // }
   emptyCart(){
-     this.cartService.removeAllCart();
+      const postsIdsArray = this.product.map((post: { id: any; }) => post.id);
+      console.log(postsIdsArray);
+      postsIdsArray.forEach((id: any) => this.removeProduct(id))
+  }
+
+  get total()  //getter
+  {
+    return this.product.reduce((sum: { price: number; },x: { Quantity: number; price: number; })=>
+    ({
+      price:sum.price+x.Quantity*x.price}),    
+      {Quantity:0,price:0} ).price;
+  }
+   
+
   }
 
   
-}
+

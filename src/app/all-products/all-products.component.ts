@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { CartService } from '../cart/cart.service';
+import { CommonService } from '../common/common.service';
 import { productService } from './product.service';
 
 @Component({
@@ -13,7 +14,10 @@ export class AllProductsComponent implements OnInit{
   public collection:any;
   public filterCategory:any;
   public category:string="";
-   constructor(private productService: productService,private cartService:CartService, private snackBar:MatSnackBar ){}
+   constructor(private productService: productService,private cartService:CartService, private snackBar:MatSnackBar,private commonService:CommonService) {
+    this.commonService.getClick().subscribe(()=>
+      this.filter(this.category));
+   } 
    ngOnInit(): void {
     this.productService.getAllProducts().subscribe(data=>{this.collection=data;
       this.filterCategory=data;
@@ -34,8 +38,8 @@ export class AllProductsComponent implements OnInit{
   }
   filter(category:string){
     this.filterCategory =this.collection.filter((a:any)=>{
-      console.log(a.category);
-      // console.log(category);
+     // console.log(a.category);
+       console.log(category);
       if(a.category === category || category==''){
         console.log(category);
         
