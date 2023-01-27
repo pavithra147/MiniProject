@@ -1,10 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { CartService } from '../cart/cart.service';
-import { CommonService } from '../common/common.service';
-import { LoginService } from '../login/login.service';
+import { AuthService } from 'src/app/auth.service';
+import { CartService } from 'src/app/product/cart/cart.service';
+import { CommonService } from 'src/app/common/common.service';
+import { LoginService } from 'src/app/login-routing/login/login.service';
+
+
+
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +17,8 @@ import { LoginService } from '../login/login.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-[x: string]: any;
-  public totalItem:any;
+
+  public totalItem:number=0;
   public loginForm: any;
   constructor(private router:Router,private cartService: CartService,private http: HttpClient,
     private auth:AuthService,public loginService: LoginService,private commonService:CommonService){
@@ -25,7 +30,8 @@ export class NavbarComponent implements OnInit {
   
   variable:boolean=false;
   ngOnInit(): void {
-      this.cartService.getProduct().subscribe((data)=>{this.totalItem=data; });
+      this.cartService.getProduct().subscribe((data:any)=>{
+        this.totalItem=data.length; });
        
     }
   showMenu(){
@@ -45,5 +51,7 @@ export class NavbarComponent implements OnInit {
  filter(category:any){
    this.commonService.click(category);
  }
+
+
  
 }

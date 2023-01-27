@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { CommonService } from 'src/app/common/common.service';
 import { CartService } from '../cart/cart.service';
-import { CommonService } from '../common/common.service';
+
+
+
 import { productService } from './product.service';
 
 @Component({
@@ -14,6 +16,7 @@ export class AllProductsComponent implements OnInit{
   public collection:any;
   public filterCategory:any;
   public category:string="";
+  
    constructor(private productService: productService,private cartService:CartService, private snackBar:MatSnackBar,private commonService:CommonService) {
     this.commonService.getClick().subscribe(()=>
       this.filter(this.category));
@@ -48,4 +51,12 @@ export class AllProductsComponent implements OnInit{
       }
     })
   }
+  categories(brand:string){
+    this.filterCategory=this.collection.filter((a:any)=>{
+     if(a.brand === brand || brand===""){
+        return a;
+      }
+     })
+  }
+  
 }

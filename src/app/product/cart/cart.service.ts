@@ -11,6 +11,7 @@ export class CartService{
 
     getProduct(){  
          return this.http.get("http://localhost:3000/addtocart");
+        
     }
     
      addToCart(product:any){
@@ -21,6 +22,5 @@ export class CartService{
          return this.http.delete(`http://localhost:3000/addtocart/${product}`);
     }
    
-  
-
+   
 }

@@ -60,3 +60,15 @@ li{
 .textcolor{
     text-decoration: none;
 }
+.whole{
+    margin-left: 5%;
+}
+.brand{
+    /* width: 300px; */
+     position: fixed;
+    width:100%;
+    
+}
+.container{
+    margin-left: 10%;
+}
