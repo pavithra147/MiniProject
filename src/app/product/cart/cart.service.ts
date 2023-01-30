@@ -4,16 +4,11 @@ import { BehaviorSubject, Subject } from "rxjs";
 
 @Injectable()
 export class CartService{
-    public cartItem:any=[];
-    public productList=new BehaviorSubject<any>([]);
-   
     constructor(private http:HttpClient) {}
 
     getProduct(){  
          return this.http.get("http://localhost:3000/addtocart");
-        
-    }
-    
+        }
      addToCart(product:any){
         return this.http.post("http://localhost:3000/addtocart",product);
         }
@@ -21,6 +16,5 @@ export class CartService{
     removeCart(product: any){
          return this.http.delete(`http://localhost:3000/addtocart/${product}`);
     }
-   
-   
+    
 }

@@ -10,10 +10,10 @@ export class CartComponent implements OnInit {
   public product:any=[];
   grandtotal!: number;
   
-  constructor(private cartService:CartService) { }
+  constructor(public cartService:CartService) { }
 ngOnInit() {
     this.cartService.getProduct().subscribe(res=>{this.product=res;});
-    console.log(this.product);
+   // console.log(this.product);
     
   }
  

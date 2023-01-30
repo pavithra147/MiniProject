@@ -18,8 +18,7 @@ export class AllProductsComponent implements OnInit{
   public category:string="";
   
    constructor(private productService: productService,private cartService:CartService, private snackBar:MatSnackBar,private commonService:CommonService) {
-    this.commonService.getClick().subscribe(()=>
-      this.filter(this.category));
+    
    } 
    ngOnInit(): void {
     this.productService.getAllProducts().subscribe(data=>{this.collection=data;
@@ -35,7 +34,8 @@ export class AllProductsComponent implements OnInit{
    addtoCart(collect:any){
     console.log(collect);
    this.cartService.addToCart(collect).subscribe();
-   localStorage.setItem('cart',( collect.id));
+
+  //  localStorage.setItem('cart',( collect.id));
    this.snackBar.open("You Successfully added to the Cart",'',{duration:4000,verticalPosition:'top',panelClass: ['blue-snackbar']});
    
   }
@@ -49,14 +49,16 @@ export class AllProductsComponent implements OnInit{
        return a;
        
       }
+      
     })
   }
   categories(brand:string){
     this.filterCategory=this.collection.filter((a:any)=>{
-     if(a.brand === brand || brand===""){
+     if(a.brand === brand ){
         return a;
       }
      })
   }
+ 
   
 }
