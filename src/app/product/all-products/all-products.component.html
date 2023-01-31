@@ -1,7 +1,9 @@
 <div class="container ">
-    <ul class="nav text-align">
-       <!-- <li class="item my-3"><a class="textcolor"(click)="filter('')">All Products</a></li>  -->
-      <li class="item my-3"><a class="textcolor"(click)="filter('Men')">Men</a></li>
+   <ul class="nav text-align">
+      <!-- <li class="item my-3"><a class="textcolor"(click)="filter('')">All Products</a></li> 
+      -->
+      <button type="button" class="badge bg-secondary" routerLink="../"><i class="fas fa-arrow-left "></i></button>
+      <li class="item my-3"><a class="textcolor" (click)="filter('Men')">Men</a></li>
       <li class="item my-3"><a class="textcolor"  (click)="filter('Women')">Women</a></li>
       <li class="item my-3"><a class="textcolor"  (click)="filter('Kids')">Kids</a></li>
       
@@ -52,7 +54,8 @@
                 <img src="{{collect.image}}" alt="image">
                 <h5 >{{collect.title}}</h5>
                 <p><strong>Price:</strong>${{collect.price}}</p>
-                <button class="btn btn-primary"(click)="addtoCart(collect)" >Add  cart</button>
+                <!-- <button class="btn btn-primary"(click)="addtoCart(collect)" [disabled]="itemExists.includes(collect.id)"  >Add  cart</button> -->
+                <button class="btn btn-primary"(click)="addtoCart(collect)" >{{collect.enrolled?'Added to cart':'Add to cart'}}</button>
              </div>
           </ng-container>
           

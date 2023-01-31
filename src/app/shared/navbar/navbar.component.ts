@@ -21,11 +21,7 @@ export class NavbarComponent implements OnInit {
   public totalItem!:number;
   public loginForm: any;
   constructor(private router:Router,public cartService: CartService,private http: HttpClient,
-    private auth:AuthService,public loginService: LoginService,private commonService:CommonService){
-      
-     
-       
-    }
+    private auth:AuthService,public loginService: LoginService,private commonService:CommonService){}
   move(){
     this.router.navigate(['/home']);
   }
@@ -37,7 +33,7 @@ export class NavbarComponent implements OnInit {
     console.log(this.totalItem);
     
       });
-    
+      
     }
   showMenu(){
     this.variable=!this.variable;
@@ -53,9 +49,9 @@ export class NavbarComponent implements OnInit {
    this.auth.logout();
 
  }
- filter(category:any){
-   this.commonService.click(category);
- }
+//  filter(category:any){
+//    this.commonService.click(category);
+//  }
 
 
  

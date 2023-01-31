@@ -28,12 +28,28 @@ export class CommonService {
 //    return user.length>0
 //   }
 
-invokeEvent: Subject<any>=new Subject();
-click(category:string){
-  this.invokeEvent.next(category);
-}
-getClick(){
-  return this.invokeEvent.asObservable();
+// invokeEvent: Subject<any>=new Subject();
+// click(category:string){
+//   this.invokeEvent.next(category);
+// }
+// getClick(){
+//   return this.invokeEvent.asObservable();
+// }
+public item:number[]=[];
+checkOutProduct: any;
+constructor(private cartService:CartService){}
+ public checkProductInCart(product:any):any{
+  this.cartService.addToCart(product);
+  if (product.Id && !this.item.includes(product.id)) {
+     this.item.push(product.Id);
+    return true;
+     }
+  
+//  return true;
+  
+  
+  
+   
 }
 
 }

@@ -10,11 +10,17 @@ export class CartService{
          return this.http.get("http://localhost:3000/addtocart");
         }
      addToCart(product:any){
+        // console.log(product);
+         
+         
         return this.http.post("http://localhost:3000/addtocart",product);
         }
    
     removeCart(product: any){
          return this.http.delete(`http://localhost:3000/addtocart/${product}`);
     }
-    
+    cart(product:any){
+        return this.http.get("http://localhost:3000/addtocart",product);
+    }
+   
 }

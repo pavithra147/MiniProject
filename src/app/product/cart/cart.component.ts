@@ -18,10 +18,11 @@ ngOnInit() {
   }
  
   removeProduct(id:any){
-    console.log(id);
+   // console.log(id);
     this.cartService.removeCart(id).subscribe();
     this.ngOnInit();
   }
+  
   incrementQuantity(products:any){
     
     console.log(products.Quantity);

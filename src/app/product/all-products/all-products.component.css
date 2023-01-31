@@ -14,9 +14,9 @@ nav{
    
 }
 
-.card:hover{
+/* .card:hover{
     transform: scale(1.2);
-}
+} */
 .card img{
     width:200px;
     height:200px;
@@ -25,7 +25,7 @@ nav{
 }
 .card img:hover{
     transition:0.3s ease-in-out;
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 .whole{
@@ -71,4 +71,9 @@ li{
 }
 .container{
     margin-left: 10%;
+}
+.badge {
+    border-radius: 100%;
+    border-style: none;
+    
 }
