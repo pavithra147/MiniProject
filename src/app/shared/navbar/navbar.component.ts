@@ -18,7 +18,7 @@ import { LoginService } from 'src/app/login-routing/login/login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  public totalItem!:number;
+  public totalItem!:any;
   public loginForm: any;
   constructor(private router:Router,public cartService: CartService,private http: HttpClient,
     private auth:AuthService,public loginService: LoginService,private commonService:CommonService){}
@@ -53,6 +53,10 @@ export class NavbarComponent implements OnInit {
 //    this.commonService.click(category);
 //  }
 
-
+myCart:any=[]
+idCheck(){
+  const myCart=this.totalItem.map((post:{id:any})=>post.id);
+  console.log(myCart);
+}
  
 }

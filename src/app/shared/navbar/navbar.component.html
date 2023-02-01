@@ -26,8 +26,8 @@
         </div>
         <div class="col md-3 col-sm-3 col-3 text-end">
           <button class="btn btn-primary">
-            <i style="font-size:25px" class="fas fa-cart-plus" routerLink="/cart"></i>
-            <div  *ngIf="loginService.getUser()" style="font-size:10px" class="badge bg-success">{{totalItem}}</div>
+            <i style="font-size:25px" class="fas fa-cart-plus" routerLink="/cart" ></i>
+            <div  *ngIf="loginService.getUser()" style="font-size:10px" class="badge bg-success" (click)="idCheck()">{{totalItem}}</div>
           </button>
         </div>
       </div>

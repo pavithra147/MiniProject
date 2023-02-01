@@ -1,31 +1,95 @@
 {
-  "posts": [
+  "register": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "firstName": "Priya",
+      "lastName": "Shree",
+      "email": "priya089@gmail.com",
+      "password": "priya@123",
+      "confirmPassword": "priya@123",
+      "state": "Tamil Nadu",
+      "city": "Chennai",
+      "postalCode": "637 002",
+      "id": 1
+    },
+    {
+      "firstName": "Abishek",
+      "lastName": "Kumar",
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "confirmPassword": "Abi@345",
+      "state": "Tamil Nadu",
+      "city": "Namakkal",
+      "postalCode": "637018",
+      "id": 2
     }
   ],
-  "comments": [
+  "user": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "email": "priya089@gmail.com",
+      "password": "priya@123",
+      "id": 1
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 2
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 3
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 4
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 5
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 6
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 7
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 8
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 9
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 10
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 11
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 12
+    },
+    {
+      "email": "abishek@56gmail.com",
+      "password": "Abi@345",
+      "id": 13
     }
   ],
-  "profile": {
-    "name": "typicode"
-  },
-  "registerDetails": {
-    "firstName": "Priya",
-    "lastName": "Shree",
-    "email": "priya089@gmail.com",
-    "password": "Priya@345",
-    "confirmPassword": "Priya@345",
-    "state": "TamilNadu",
-    "city": "Chennai",
-    "postalCode": "637002"
-  },
   "products": [
     {
       "id": 1,
@@ -441,5 +505,54 @@
       ]
     }
   ],
-  "addtocart": []
+  "addtocart": [
+    {
+      "id": 1,
+      "userid": "abishek@56gmail.com",
+      "title": "Alden Men's D1954HC Handsewn Moc Toe Boot Arabic Lux",
+      "price": 900,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "Men",
+      "brand": "Alden Shoes",
+      "image": "https://i.ebayimg.com/thumbs/images/g/NAgAAOSwmmVjj6~c/s-l300.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "size": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "Quantity": 1,
+      "Total": 900
+    },
+    {
+      "id": 3,
+      "userid": "abishek@56gmail.com",
+      "title": "New Balance Men's M990v5 M990GL5 Grey-Castlerock",
+      "price": 435,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+      "category": "Men",
+      "brand": "Castlerrock",
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/372981/05/sv01/fnd/IND/fmt/png/Puma-Perforated-Low-Men's-Shoes",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      },
+      "size": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "Quantity": 1,
+      "Total": 435
+    }
+  ]
 }

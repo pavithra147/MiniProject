@@ -5,12 +5,7 @@ import { CartComponent } from './product/cart/cart.component';
 import { CheckoutComponent } from './product/checkout/checkout.component';
 
 
-const routes: Routes = [
- //  {path:'login',
-// loadChildren:()=>import('./login/login.module').then(m=>m.LoginModule)},
- 
- 
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

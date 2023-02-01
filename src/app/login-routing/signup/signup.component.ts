@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
 
   registerDetails(){
     const postData=this.registerForm.value;
-    this.http.post("http://localhost:3000/registerDetails",postData).subscribe(data=>{
+    this.http.post("http://localhost:3000/register",postData).subscribe(data=>{
       console.log(data);
       
       this.SnackBar.open("SignUp is Successful",'',{duration:4000,verticalPosition:'top',panelClass:['blue-snackbar']})

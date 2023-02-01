@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject, map, Subject } from "rxjs";
 
 @Injectable()
 export class CartService{
@@ -21,6 +21,13 @@ export class CartService{
     }
     cart(product:any){
         return this.http.get("http://localhost:3000/addtocart",product);
+    }
+
+    getProducts(){
+        return this.http.get('http://localhost:3000/addtocart?userid').pipe((map((res:any)=>{return res;})))
+    }
+    user(){
+        return this.http.get('http://localhost:3000/user')
     }
    
 }

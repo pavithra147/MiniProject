@@ -25,24 +25,30 @@ constructor(private form:FormBuilder, private http :HttpClient,private router: R
      })
    }
    submit(){
-        this.http.get<any>("http://localhost:3000/registerDetails")
-        .subscribe(res=>{
-          console.log("response",res);
-          const user=  ((res.email === this.loginForm.value.email)&& (res.password === this.loginForm.value.password));
-          
-         
+        this.http.get<any>("http://localhost:3000/register")
+        .subscribe({
+         next:(res)=> {console.log("response",res);
+          const user= res.find((a:any)=>{
+          return ((a.email === this.loginForm.value.email)&& (a.password === this.loginForm.value.password));
+          })
           if(user){
              this.snackBar.open("Login Success",'',{duration:3000,
            verticalPosition:'top',panelClass: ['blue-snackbar']});
            this.router.navigate(['/home']);
       localStorage.setItem("emailId",this.loginForm.value.email);
+     // sessionStorage.setItem('email',(this.loginForm.value.email))
           
           }else{
             this.snackBar.open("User Not Found!!!",'',{duration:3000,
               verticalPosition:'top',panelClass:['red-snackbar']});
-          }
-        },(error:any)=>{ this.snackBar.open("Something went wrong",'',{duration:3000,
-          verticalPosition:'top',panelClass: ['blue-snackbar']});})
+          }}
+        ,error:(e)=> this.snackBar.open("Something went wrong",'',{duration:3000,
+          verticalPosition:'top',panelClass: ['blue-snackbar']})})
+
+          const postData=this.loginForm.value;
+          this.http.post("http://localhost:3000/user",postData).subscribe(data=>{
+      console.log(data);})
+      // sessionStorage.setItem('email',(this.loginForm.value.email))
  }
  login(){
     this.auth.login();

@@ -9,11 +9,11 @@ import { CartService } from './cart.service';
 export class CartComponent implements OnInit {
   public product:any=[];
   grandtotal!: number;
-  
+  public cartItems:any=[];
   constructor(public cartService:CartService) { }
 ngOnInit() {
     this.cartService.getProduct().subscribe(res=>{this.product=res;});
-   // console.log(this.product);
+    console.log(this.product);
     
   }
  
@@ -53,8 +53,13 @@ ngOnInit() {
       price:sum.price+x.Quantity*x.price}),    
       {Quantity:0,price:0} ).price;
   }
+  //   myCart:any=[]
+  // idCheck(){
+  //   const myCart=this.product.map((post:{userid:any})=>post.userid);
+  //   console.log(myCart);
+  // }
    
-
+     
   }
 
   
