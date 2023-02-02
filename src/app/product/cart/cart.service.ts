@@ -7,8 +7,10 @@ export class CartService{
     constructor(private http:HttpClient) {}
 
     getProduct(){  
-         return this.http.get("http://localhost:3000/addtocart");
+        const customer = sessionStorage.getItem('emailId')
+         return this.http.get("http://localhost:3000/addtocart?emailId=" +customer);
         }
+       
      addToCart(product:any){
         // console.log(product);
          
@@ -23,11 +25,11 @@ export class CartService{
         return this.http.get("http://localhost:3000/addtocart",product);
     }
 
-    getProducts(){
-        return this.http.get('http://localhost:3000/addtocart?userid').pipe((map((res:any)=>{return res;})))
-    }
-    user(){
-        return this.http.get('http://localhost:3000/user')
-    }
+   quantityIncrement(pid:any,product:any){
+    return this.http.put(`http://localhost:3000/addtocart/${pid}`,product);
+   }
+   quantityDecrement(pid:any,product:any){
+    return this.http.put(`http://localhost:3000/addtocart/${pid}`,product);
+   }
    
 }

@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/login-routing/login/login.service';
 import { CartService } from './cart.service';
 
 @Component({
@@ -10,10 +11,15 @@ export class CartComponent implements OnInit {
   public product:any=[];
   grandtotal!: number;
   public cartItems:any=[];
-  constructor(public cartService:CartService) { }
+  constructor(public cartService:CartService,private loginService:LoginService) { }
 ngOnInit() {
-    this.cartService.getProduct().subscribe(res=>{this.product=res;});
-    console.log(this.product);
+    this.cartService.getProduct().subscribe(res=>{this.product=res;
+      console.log(this.product);
+     console.log(this.product.length);
+      sessionStorage.setItem('count',JSON.stringify(this.product.length));
+    });
+    
+    // console.log(this.product);
     
   }
  
@@ -26,20 +32,24 @@ ngOnInit() {
   incrementQuantity(products:any){
     
     console.log(products.Quantity);
-    if(products.Quantity !=5){
+    console.log(products.pid);
+    if(products.Quantity !=10){
     products.Quantity=products.Quantity +1;
+    this.cartService.quantityIncrement(products.pid,products).subscribe();
     }
-  
+    
+    let increment=this.product.find((a:any)=>{return ((a.id)===(products.id))
+    })
+    console.log(increment);
   }
   decrementQuantity(products:any){
     console.log(products.Quantity);
     if(products.Quantity !=1){
     products.Quantity=products.Quantity -1;
+    this.cartService.quantityDecrement(products.pid,products).subscribe();
     }
   }
-  // grandTotal(product:any){
-  // this.grandtotal=product.Quantity*product.price;
-  // }
+  
   emptyCart(){
       const postsIdsArray = this.product.map((post: { id: any; }) => post.id);
       console.log(postsIdsArray);
@@ -59,6 +69,7 @@ ngOnInit() {
   //   console.log(myCart);
   // }
    
+  
      
   }
 

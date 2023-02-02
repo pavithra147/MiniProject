@@ -29,9 +29,9 @@ export class NavbarComponent implements OnInit {
   variable:boolean=false;
   ngOnInit(): void {
     this.cartService.getProduct().subscribe((data:any)=>{
-      this.totalItem=data.length; 
-    console.log(this.totalItem);
-    
+      this.totalItem=data; 
+    console.log(this.totalItem.length);
+   
       });
       
     }

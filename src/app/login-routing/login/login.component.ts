@@ -35,8 +35,8 @@ constructor(private form:FormBuilder, private http :HttpClient,private router: R
              this.snackBar.open("Login Success",'',{duration:3000,
            verticalPosition:'top',panelClass: ['blue-snackbar']});
            this.router.navigate(['/home']);
-      localStorage.setItem("emailId",this.loginForm.value.email);
-     // sessionStorage.setItem('email',(this.loginForm.value.email))
+      sessionStorage.setItem("emailId",this.loginForm.value.email);
+     
           
           }else{
             this.snackBar.open("User Not Found!!!",'',{duration:3000,
