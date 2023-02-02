@@ -6,13 +6,15 @@ import { CartService } from './cart/cart.service';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductRoutingModule } from '../product-routing/product-routing.module';
+import { FilterPipe } from '../filter.pipe';
 
 
 
 @NgModule({
   declarations: [AllProductsComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,

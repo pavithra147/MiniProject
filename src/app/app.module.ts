@@ -11,7 +11,6 @@ import { AuthService } from './auth.service';
 import { TotalPipe } from './total.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FilterPipe } from './filter.pipe';
 import { LoginModule } from './login-routing/login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './product/product.module';
@@ -20,8 +19,8 @@ import { ProductModule } from './product/product.module';
 @NgModule({
     declarations: [
         AppComponent,
-        TotalPipe,
-        FilterPipe,
+        TotalPipe
+        
         
     ],
     providers: [ CommonService, AuthGuardService, AuthService],
