@@ -13,9 +13,7 @@ export class CartService{
        
      addToCart(product:any){
         // console.log(product);
-         
-         
-        return this.http.post("http://localhost:3000/addtocart",product);
+          return this.http.post("http://localhost:3000/addtocart",product);
         }
    
     removeCart(product: any){
