@@ -1,13 +1,12 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, map, Subject } from "rxjs";
 
 @Injectable()
 export class CartService{
-    constructor(private http:HttpClient) {}
+    constructor(private http:HttpClient) { }
 
     getProduct(){  
-        const customer = sessionStorage.getItem('emailId')
+        const customer = sessionStorage.getItem('emailId');
          return this.http.get("http://localhost:3000/addtocart?emailId=" +customer);
         }
        

@@ -14,6 +14,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginModule } from './login-routing/login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './product/product.module';
+import { productService } from './product/all-products/product.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { ProductModule } from './product/product.module';
         
         
     ],
-    providers: [ CommonService, AuthGuardService, AuthService],
+    providers: [ CommonService, AuthGuardService, AuthService, productService],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

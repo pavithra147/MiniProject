@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/login-routing/login/login.service';
+import { productService } from '../all-products/product.service';
 import { CartService } from './cart.service';
 
 @Component({
@@ -11,15 +12,18 @@ export class CartComponent implements OnInit {
   public product:any=[];
   grandtotal!: number;
   public cartItems:any=[];
-  constructor(public cartService:CartService,private loginService:LoginService) { }
+  constructor(public cartService:CartService,private loginService:LoginService,private productService:productService) { 
+   // this.productService.obs$.subscribe(x => console.log("from",x));
+  }
 ngOnInit() {
     this.cartService.getProduct().subscribe(res=>{this.product=res;
       console.log(this.product);
      console.log(this.product.length);
       sessionStorage.setItem('count',JSON.stringify(this.product.length));
+       this.productService.sendData(this.product.length);
     });
     
-    // console.log(this.product);
+   
     
   }
  

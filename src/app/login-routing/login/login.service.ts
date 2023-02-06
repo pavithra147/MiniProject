@@ -39,10 +39,10 @@ export class LoginService{
       this.router.navigate(['/home']);
     }
     
-     getCount(){
-      const countItem=sessionStorage.getItem('count');
-       return countItem;
-    }
+   //   getCount(){
+   //    const countItem=sessionStorage.getItem('count');
+   //     return countItem;
+   //  }
       //  obs=new Observable(sub=>{
       //    const countItem=JSON.parse(sessionStorage.getItem('count') || '{}');
       //    sub.next(countItem);
