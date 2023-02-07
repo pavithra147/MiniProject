@@ -7,6 +7,7 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductRoutingModule } from '../product-routing/product-routing.module';
 import { FilterPipe } from '../filter.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,8 @@ import { FilterPipe } from '../filter.pipe';
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    ReactiveFormsModule
   ],
   providers:[productService,CartService],
   exports:[AllProductsComponent,

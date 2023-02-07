@@ -10,8 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  public registerForm!:FormGroup
-  public address!:FormGroup
+  public registerForm!:FormGroup;
   public submitted=false
   constructor(private form:FormBuilder,private http: HttpClient,private router:Router,private SnackBar: MatSnackBar ) { }
 

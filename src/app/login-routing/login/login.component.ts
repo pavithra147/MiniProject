@@ -48,7 +48,7 @@ constructor(private form:FormBuilder, private http :HttpClient,private router: R
           const postData=this.loginForm.value;
           this.http.post("http://localhost:3000/user",postData).subscribe(data=>{
       console.log(data);})
-      // sessionStorage.setItem('email',(this.loginForm.value.email))
+     
  }
  login(){
     this.auth.login();

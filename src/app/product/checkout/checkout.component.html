@@ -1,3 +1,42 @@
-<div class="checkout">
-    <h1>Your Order is Placed Successfully</h1>
+<div class="body">
+<form class="container p-4 my-3 border col-xs-6 col-md-4 bg" [formGroup]="checkOutForm" (ngSubmit)="checkOutDetails()" >
+    <div class="text-dark">
+        <h1>CheckOut</h1>
+    </div>
+    <div class="form-group my-3 ">
+        <label>Name</label>
+    <input  class="form-control "type="text" name="name" [class.is-invalid]="checkOutForm.get('name')?.invalid && checkOutForm.get('name')?.touched  " formControlName="name" >
+</div>
+
+  <div class="error" *ngIf="checkOutForm.get('name')?.invalid && checkOutForm.get('name')?.touched ">
+   <small *ngIf="checkOutForm.get('name')?.errors?.['required']"class="text-danger"> Name is required</small>  
+</div> 
+<div class="form-group ">
+    <label>Email address</label>
+    <input  class="form-control "type="email"  name="email" [class.is-invalid]="checkOutForm.get('email')?.invalid && checkOutForm.get('email')?.touched" formControlName="email" >
+</div>
+
+  <div class="error" *ngIf="checkOutForm.get('email')?.invalid && checkOutForm.get('email')?.touched">
+   <small *ngIf="checkOutForm.get('email')?.errors?.['required']"class="text-danger">Email address is required</small> 
+   <small *ngIf="checkOutForm.get('email')?.errors?.['email']" class="text-danger">Enter email in correct format</small> 
+</div>
+<div class="form-group my-3 ">
+    <label>Address</label>
+<input  class="form-control "type="text" name="address" [class.is-invalid]="checkOutForm.get('address')?.invalid && checkOutForm.get('address')?.touched  " formControlName="address" >
+</div>
+
+<div class="error" *ngIf="checkOutForm.get('address')?.invalid && checkOutForm.get('address')?.touched ">
+<small *ngIf="checkOutForm.get('address')?.errors?.['required']"class="text-danger">Address is required</small>  
+</div>
+<div class="formGroup my-3">
+    <label>Phone Number</label>
+    <input type="tel" class="form-control" formControlName="phoneNo" >
+</div>
+<div class="error" *ngIf="checkOutForm.get('phoneNo')?.invalid && checkOutForm.get('phoneNo')?.touched ">
+    <small *ngIf="checkOutForm.get('phoneNo')?.errors?.['required']"class="text-danger">Phone Number is required</small>  
+ </div> 
+<div class="my-3 text-align">
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()" >Submit</button>
+</div>
+</form>
 </div>

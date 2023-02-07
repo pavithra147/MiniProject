@@ -35,11 +35,11 @@ count$: any;
   public item:any;
   variable:boolean=false;
   ngOnInit(): void {
-    this.cartService.getProduct().subscribe((data:any)=>{
-      this.totalItem=data; 
-    console.log(this.totalItem.length);
+    // this.cartService.getProduct().subscribe((data:any)=>{
+    //   this.totalItem=data; 
+    // console.log(this.totalItem.length);
       
-      });
+    //   });
       
     }
 

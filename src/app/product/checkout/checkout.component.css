@@ -1,4 +1,4 @@
-.checkout{
+/* .checkout{
     background-image: url("https://media.istockphoto.com/id/1268290443/photo/cartons-or-paper-boxes-in-blue-shopping-cart-on-pink-background-online-shopping-consumers-can.jpg?b=1&s=612x612&w=0&k=20&c=73aUv7Rl9QbsSzTisdXOJ7XH4IGFXgbvIEoyIw-eUck=");
     width:800px;
     height:500px;
@@ -9,4 +9,13 @@ h1{
    width:200px;
    margin-left: 5%; 
    padding-top: 10%;
+} */
+.bg{
+    background-color: rgb(180, 224, 180);
+}
+.body{
+    background-image: url("https://media.istockphoto.com/id/1268290443/photo/cartons-or-paper-boxes-in-blue-shopping-cart-on-pink-background-online-shopping-consumers-can.jpg?b=1&s=612x612&w=0&k=20&c=73aUv7Rl9QbsSzTisdXOJ7XH4IGFXgbvIEoyIw-eUck=");
+    background-size: cover;
+    height:1000px;
+    margin:0
 }

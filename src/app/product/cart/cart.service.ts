@@ -28,5 +28,9 @@ export class CartService{
    quantityDecrement(pid:any,product:any){
     return this.http.put(`http://localhost:3000/addtocart/${pid}`,product);
    }
+
+   checkOut(product:any){
+    return this.http.post("http://localhost:3000/checkout",product);
+   }
    
 }
