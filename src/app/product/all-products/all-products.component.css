@@ -60,18 +60,18 @@ li{
 .textcolor{
     text-decoration: none;
 }
-.whole{
+/* .whole{
     margin-left: 5%;
-}
-.brand{
-    /* width: 300px; */
+} */
+/* .brand{
+    
      position: fixed;
     width:100%;
     
-}
-.container{
+} */
+/* .container{
     margin-left: 10%;
-}
+} */
 .badge {
     border-radius: 100%;
     border-style: none;

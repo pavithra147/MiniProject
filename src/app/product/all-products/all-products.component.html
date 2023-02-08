@@ -1,16 +1,23 @@
-<div class="container ">
-   <ul class="nav text-align">
-      <!-- <li class="item my-3"><a class="textcolor"(click)="filter('')">All Products</a></li> 
+<div class="container">
+  <ul class="nav text-align">
+    <!-- <li class="item my-3"><a class="textcolor"(click)="filter('')">All Products</a></li> 
       -->
-      <button type="button" class="badge bg-secondary" routerLink="../"><i class="fas fa-arrow-left "></i></button>
-      <li class="item my-3"><a class="textcolor" (click)="filter('Men')">Men</a></li>
-      <li class="item my-3"><a class="textcolor"  (click)="filter('Women')">Women</a></li>
-      <li class="item my-3"><a class="textcolor"  (click)="filter('Kids')">Kids</a></li>
-      
-    </ul>
-  </div>
+    <button type="button" class="badge bg-secondary" routerLink="../">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    <li class="item my-3">
+      <a class="textcolor" (click)="filter('Men')">Men</a>
+    </li>
+    <li class="item my-3">
+      <a class="textcolor" (click)="filter('Women')">Women</a>
+    </li>
+    <li class="item my-3">
+      <a class="textcolor" (click)="filter('Kids')">Kids</a>
+    </li>
+  </ul>
+</div>
 <div class="filterList">
-   <div class="brand">
+  <!--<div class="brand">
       <h5>Brand</h5>
       <ul>
          <input type="checkbox" name="check" (click)="categories('Alden Shoes')">&nbsp;
@@ -45,21 +52,21 @@
          <input type="checkbox">&nbsp;
          <span>Above 500-1000 dollars</span>
       </ul>
-   </div>
-<div class="whole">
+   </div> -->
+  <div class="whole">
     <div class="container">
-       <div class="row">
-          <ng-container *ngFor="let collect of filterCategory">
-             <div class="card col-md-3">
-                <img src="{{collect.image}}" alt="image">
-                <h5 >{{collect.title}}</h5>
-                <p><strong>Price:</strong>${{collect.price}}</p>
-                <!-- <button class="btn btn-primary"(click)="addtoCart(collect)" [disabled]="itemExists.includes(collect.id)"  >Add  cart</button> -->
-                <button class="btn btn-primary"(click)="addtoCart(collect)" >{{collect.enrolled?'Added to cart':'Add to cart'}}</button>
-             </div>
-          </ng-container>
-          
-       </div>
+      <div class="row">
+        <ng-container *ngFor="let collect of filterCategory">
+          <div class="card col-md-3">
+            <img src="{{ collect.image }}" alt="image" />
+            <h5>{{ collect.title }}</h5>
+            <p><strong>Price:</strong>${{ collect.price }}</p>
+            <button class="btn btn-primary" (click)="addtoCart(collect)">
+              Add to cart
+            </button>
+          </div>
+        </ng-container>
+      </div>
     </div>
-    </div>
+  </div>
 </div>

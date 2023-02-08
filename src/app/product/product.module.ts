@@ -6,25 +6,12 @@ import { CartService } from './cart/cart.service';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductRoutingModule } from '../product-routing/product-routing.module';
-import { FilterPipe } from '../filter.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-
 @NgModule({
-  declarations: [AllProductsComponent,
-    CartComponent,
-    CheckoutComponent,
-    FilterPipe
-  ],
-  imports: [
-    CommonModule,
-    ProductRoutingModule,
-    ReactiveFormsModule
-  ],
-  providers:[productService,CartService],
-  exports:[AllProductsComponent,
-    CartComponent,
-    CheckoutComponent]
+  declarations: [AllProductsComponent, CartComponent, CheckoutComponent],
+  imports: [CommonModule, ProductRoutingModule, ReactiveFormsModule],
+  providers: [productService, CartService],
+  exports: [AllProductsComponent, CartComponent, CheckoutComponent],
 })
-export class ProductModule { }
+export class ProductModule {}

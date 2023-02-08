@@ -1,4 +1,7 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Overlay } from 'ngx-toastr';
 
 import { SignupComponent } from './signup.component';
 
@@ -8,7 +11,8 @@ describe('SignupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignupComponent ]
+      declarations: [ SignupComponent ],
+      providers:[HttpClient,HttpHandler,MatSnackBar,Overlay]
     })
     .compileComponents();
 
