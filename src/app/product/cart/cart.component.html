@@ -30,7 +30,7 @@
                             <i class="fas fa-minus"(click)="decrementQuantity(products)"></i>
                         </button>
                     </td>
-                    <td style="width:12%">{{products.Total*products.Quantity}}</td>
+                    <td style="width:12%">{{products.price * products.Quantity}}</td>
                     <td>
                         <button class="btn "><i class="fas fa-trash" (click)="removeProduct(products.id)"></i>Delete</button>
                     </td>

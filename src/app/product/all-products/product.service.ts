@@ -24,4 +24,6 @@ export class productService {
   sendData(data: number) {
     this.subject.next(data);
   }
+
+
 }

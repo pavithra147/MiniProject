@@ -20,6 +20,7 @@ export class CartService {
     return this.http.delete<addtocart>(`http://localhost:3000/addtocart/${product}`);
   }
 
+  
   quantityIncrement(pid: any, product: any):Observable<addtocart> {
     return this.http.put<addtocart>(`http://localhost:3000/addtocart/${pid}`, product);
   }

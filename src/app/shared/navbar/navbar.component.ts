@@ -14,6 +14,8 @@ export class NavbarComponent implements OnInit {
   public totalItem!: any;
   public loginForm: any;
   count$: any;
+  
+  
   constructor(
     private router: Router,
     public cartService: CartService,
@@ -23,6 +25,8 @@ export class NavbarComponent implements OnInit {
     this.productService.obs$.subscribe((x) => {
       this.count = x;
     });
+   
+    
   }
   move() {
     this.router.navigate(['/home']);

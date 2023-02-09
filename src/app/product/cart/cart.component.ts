@@ -21,8 +21,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartService.getProduct().subscribe((res) => {
       this.product = res;
-
-      sessionStorage.setItem('count', JSON.stringify(this.product.length));
+     sessionStorage.setItem('count', JSON.stringify(this.product.length));
       this.productService.sendData(this.product.length);
     });
   }
@@ -35,13 +34,13 @@ export class CartComponent implements OnInit {
   incrementQuantity(products: any) {
     if (products.Quantity != 10) {
       products.Quantity = products.Quantity + 1;
-      this.cartService.quantityIncrement(products.pid, products).subscribe();
+      this.cartService.quantityIncrement(products.id, products).subscribe();
     }
   }
   decrementQuantity(products: any) {
     if (products.Quantity != 1) {
       products.Quantity = products.Quantity - 1;
-      this.cartService.quantityDecrement(products.pid, products).subscribe();
+      this.cartService.quantityDecrement(products.id, products).subscribe();
     }
   }
 

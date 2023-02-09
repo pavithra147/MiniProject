@@ -61,8 +61,8 @@
             <img src="{{ collect.image }}" alt="image" />
             <h5>{{ collect.title }}</h5>
             <p><strong>Price:</strong>${{ collect.price }}</p>
-            <button class="btn btn-primary" (click)="addtoCart(collect)">
-              Add to cart
+            <button disabled="{{collect.added}}"class="btn btn-primary" (click)="addtoCart(collect)" >
+              {{collect.added ? "Added To cart" :"Add to cart"}}
             </button>
           </div>
         </ng-container>
