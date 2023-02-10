@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommonService } from 'src/app/common.service';
 import { CartService } from '../cart/cart.service';
 import { productService } from './product.service';
 
@@ -14,22 +16,21 @@ export class AllProductsComponent implements OnInit {
   public category: string = '';
   public customer = sessionStorage.getItem('emailId');
   public product: any;
-  public item: any;
-  cartlist: any;
+  
  
   constructor(
     private productService: productService,
     private cartService: CartService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private commonService:CommonService
   ) {}
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((data: any) => {
       this.collection = data;
       console.log(data);
-      this.filterCategory = data;
     });
     this.check();
-  }
+   }
 
   addtoCart(collect: any) {
     this.snackBar.open('You Successfully added to the Cart', '', {
@@ -46,19 +47,22 @@ export class AllProductsComponent implements OnInit {
   }
 
   filter(category: string) {
-    this.filterCategory = this.collection.filter((a: any) => {
+    this.filterCategory = this.filterCategory.filter((a: any) => {
       if (a.category === category || category == '') {
+        console.log('5678');
+        
         return a;
-      }
+   }
+
     });
   }
-  categories(brand: string) {
-    this.filterCategory = this.collection.filter((a: any) => {
-      if (a.brand === brand) {
-        return a;
-      }
-    });
-  }
+  // categories(brand: string) {
+  //   this.filterCategory = this.collection.filter((a: any) => {
+  //     if (a.brand === brand) {
+  //       return a;
+  //     }
+  //   });
+  // }
 
   check() {
     this.cartService.getProduct().subscribe((res) => {
@@ -75,5 +79,12 @@ export class AllProductsComponent implements OnInit {
         }
       });
     });
+
+  //   this.cartService.getProduct().subscribe((res) => {
+  //     this.product = res;
+  //    this.productService.sendData(this.product.length);
+  //   });
+  // }
+  this.commonService.count();
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CartService } from '../cart/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommonService } from 'src/app/common.service';
 
 @Component({
   selector: 'app-checkout',
@@ -16,7 +17,8 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private cartService: CartService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private commonService:CommonService
   ) {}
   ngOnInit() {
     this.checkOutForm = this.formBuilder.group({
@@ -25,6 +27,7 @@ export class CheckoutComponent implements OnInit {
       address: ['', Validators.required],
       phoneNo: ['', Validators.required],
     });
+    
   }
 
   checkOutDetails() {
@@ -42,6 +45,7 @@ export class CheckoutComponent implements OnInit {
         verticalPosition: 'top',
         panelClass: ['blue-snackbar'],
       });
+    
     } else {
       this.snackBar.open('Enter Correct mail Id', '', {
         duration: 4000,

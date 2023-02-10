@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/common.service';
 import { LoginService } from 'src/app/login-routing/login/login.service';
 import { productService } from '../all-products/product.service';
 import { CartService } from './cart.service';
@@ -14,16 +15,19 @@ export class CartComponent implements OnInit {
   public cartItems: any = [];
   constructor(
     public cartService: CartService,
-    private productService: productService
-  ) {
-    // this.productService.obs$.subscribe(x => console.log("from",x));
-  }
+    private productService: productService,
+    private commonService:CommonService,
+    
+  ) {this.product = this.commonService.product}
   ngOnInit() {
-    this.cartService.getProduct().subscribe((res) => {
+    this.getProduct();
+    this.commonService.count();
+ 
+  }
+  getProduct(){
+    this.cartService.getProduct().subscribe(res=>{
       this.product = res;
-     sessionStorage.setItem('count', JSON.stringify(this.product.length));
-      this.productService.sendData(this.product.length);
-    });
+    })
   }
 
   removeProduct(id: any) {
@@ -50,7 +54,8 @@ export class CartComponent implements OnInit {
     postsIdsArray.forEach((id: any) => this.removeProduct(id));
   }
 
-  get total() { //getter
+  get total() {
+    //getter
     return this.product.reduce(
       (sum: { price: number }, x: { Quantity: number; price: number }) => ({
         price: sum.price + x.Quantity * x.price,
