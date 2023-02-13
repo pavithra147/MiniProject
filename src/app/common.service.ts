@@ -16,7 +16,7 @@ export class CommonService {
       this.product = res;
       console.log(res);
       
-      this.productService.sendData(this.product.length);
+      this.productService.sendData(this.product?.length);
     });
   }
 }

@@ -8,6 +8,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductRoutingModule } from '../product-routing/product-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [AllProductsComponent, CartComponent, CheckoutComponent],
   imports: [CommonModule, ProductRoutingModule, ReactiveFormsModule],

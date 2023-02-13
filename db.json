@@ -32,6 +32,17 @@
       "city": "chennai",
       "postalCode": "638154",
       "id": 3
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "confirmPassword": "",
+      "state": "",
+      "city": "",
+      "postalCode": "",
+      "id": 4
     }
   ],
   "products": [
@@ -347,133 +358,6 @@
       "id": 2
     }
   ],
-  "checkout": [
-    {
-      "name": "pavithra",
-      "email": "abc@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "9876787645",
-      "id": 1
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "9876567890",
-      "id": 2
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765789087",
-      "id": 3
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765789087",
-      "id": 4
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765789087",
-      "id": 5
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765789087",
-      "id": 6
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765789087",
-      "id": 7
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765789087",
-      "id": 8
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765456780",
-      "id": 9
-    },
-    {
-      "name": "Priya Shree",
-      "email": "priya089@gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765456780",
-      "id": 10
-    },
-    {
-      "name": "Abishek",
-      "email": "abishek@56gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "8765456780",
-      "id": 11
-    },
-    {
-      "name": "Abishek",
-      "email": "abishek@56gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "9877897690",
-      "id": 12
-    },
-    {
-      "name": "A",
-      "email": "",
-      "address": "",
-      "phoneNo": "",
-      "id": 13
-    },
-    {
-      "name": "Abishek",
-      "email": "abishek@56gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "7654345678",
-      "id": 14
-    },
-    {
-      "name": "Abishek",
-      "email": "abishek@56gmail.com",
-      "address": "10,Gandhi Nagar, Chennai",
-      "phoneNo": "7654345678",
-      "id": 15
-    },
-    {
-      "name": null,
-      "email": null,
-      "address": null,
-      "phoneNo": null,
-      "id": 16
-    },
-    {
-      "name": null,
-      "email": null,
-      "address": null,
-      "phoneNo": null,
-      "id": 17
-    },
-    {
-      "name": null,
-      "email": null,
-      "address": null,
-      "phoneNo": null,
-      "id": 18
-    }
-  ],
-  "added": []
+  "added": [],
+  "orders": []
 }

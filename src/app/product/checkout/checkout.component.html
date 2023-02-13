@@ -1,5 +1,5 @@
 <div class="body">
-<form class="container p-4 my-3 border col-xs-6 col-md-4 bg" [formGroup]="checkOutForm" (ngSubmit)="checkOutDetails()" >
+<form class="container p-4 my-3 border col-xs-6 col-md-4 bg" [formGroup]="checkOutForm" (ngSubmit)="onSubmit()" >
     <div class="text-dark">
         <h1>CheckOut</h1>
     </div>
@@ -36,7 +36,7 @@
     <small *ngIf="checkOutForm.get('phoneNo')?.errors?.['required']"class="text-danger">Phone Number is required</small>  
  </div> 
 <div class="my-3 text-align">
-    <button type="submit" class="btn btn-primary" (click)="onSubmit()" >Submit</button>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="!checkOutForm.valid" >Submit</button>
 </div>
 </form>
 </div>

@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="product.length !=0">
+<ng-container *ngIf="product?.length !=0">
    <div class="container">
     <div class="card-table">
         <div class="cart">
@@ -38,7 +38,7 @@
                 <tr>
                     <td colspan="4"></td>
                     <td ><button class="btn btn-primary text-white"(click)="emptyCart()"> Clear Product</button></td>
-                    <td ><button class="btn btn-primary text-white"routerLink="/checkOut"> Checkout</button></td>
+                    <td ><button class="btn btn-primary text-white"(click)="checkOut()"> Checkout</button></td>
                     <!-- <td><b>Grand Total: $ {{product |total:"Total"}}</b></td> -->
                     <td><b>Grand Total: $ {{total}}</b></td>
                     
@@ -51,7 +51,7 @@
 </ng-container>
 
 
-<ng-container *ngIf="product.length ==0">
+<ng-container *ngIf="product?.length ==0">
     <div class="container">
         <div class="card">
             <h4 class="card-title">My cart</h4>

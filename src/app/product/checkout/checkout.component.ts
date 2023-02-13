@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CartService } from '../cart/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonService } from 'src/app/common.service';
+import { productService } from '../all-products/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -14,12 +16,14 @@ export class CheckoutComponent implements OnInit {
   public user: any;
   public submitted = false;
   public cartList: any;
+  public product:any;
   constructor(
     private formBuilder: FormBuilder,
     private cartService: CartService,
     private snackBar: MatSnackBar,
-    private commonService:CommonService
-  ) {}
+    private commonService:CommonService,
+    private router:Router
+  ) {{this.product = this.commonService.product}}
   ngOnInit() {
     this.checkOutForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -27,8 +31,15 @@ export class CheckoutComponent implements OnInit {
       address: ['', Validators.required],
       phoneNo: ['', Validators.required],
     });
-    
+    // this.getProduct();
+    // this.commonService.count();
   }
+  // getProduct(){
+  //   this.cartService.getProduct().subscribe(res=>{
+  //     this.product = res;
+  //   })
+  // }
+
 
   checkOutDetails() {
     this.user = this.checkOutForm.value;
@@ -38,21 +49,13 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-    if (this.checkOutForm.value.email === sessionStorage.getItem('emailId')) {
       this.snackBar.open('Your Order is placed successfully', '', {
         duration: 4000,
         verticalPosition: 'top',
         panelClass: ['blue-snackbar'],
       });
-    
-    } else {
-      this.snackBar.open('Enter Correct mail Id', '', {
-        duration: 4000,
-        verticalPosition: 'top',
-        panelClass: ['red-snackbar'],
-      });
+      this.commonService.count();
+      this.checkOutForm.reset();
     }
-    this.checkOutForm.reset();
   }
-}
+

@@ -56,13 +56,7 @@ export class AllProductsComponent implements OnInit {
 
     });
   }
-  // categories(brand: string) {
-  //   this.filterCategory = this.collection.filter((a: any) => {
-  //     if (a.brand === brand) {
-  //       return a;
-  //     }
-  //   });
-  // }
+ 
 
   check() {
     this.cartService.getProduct().subscribe((res) => {
@@ -80,11 +74,7 @@ export class AllProductsComponent implements OnInit {
       });
     });
 
-  //   this.cartService.getProduct().subscribe((res) => {
-  //     this.product = res;
-  //    this.productService.sendData(this.product.length);
-  //   });
-  // }
+ 
   this.commonService.count();
   }
 }

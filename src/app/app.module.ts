@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { ProductModule } from './product/product.module';
 import { productService } from './product/all-products/product.service';
 
+
 @NgModule({
   declarations: [AppComponent],
   providers: [AuthGuardService, productService],

@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent, canActivate: [AuthGuardService] },
   { path: 'checkOut', component: CheckoutComponent },
   { path: 'allProduct', component: AllProductsComponent },
+  
 ];
 
 @NgModule({

@@ -11,7 +11,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class SignupComponent implements OnInit {
   public registerForm!: FormGroup;
-  public submitted = false;
   constructor(
     private form: FormBuilder,
     private http: HttpClient,
@@ -55,10 +54,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    }
+    
     this.SnackBar.open('You successfully registered', '', {
       duration: 4000,
       verticalPosition: 'top',

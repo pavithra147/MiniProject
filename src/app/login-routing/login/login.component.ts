@@ -61,12 +61,5 @@ export class LoginComponent implements OnInit {
         }),
     });
 
-    const postData = this.loginForm.value;
-    this.http.post('http://localhost:3000/user', postData).subscribe((data) => {
-      console.log(data);
-    });
   }
-  // login() {
-  //   this.auth.login();
-  // }
 }
