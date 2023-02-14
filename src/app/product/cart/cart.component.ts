@@ -11,7 +11,6 @@ import { CartService } from '../../service/cart.service';
 export class CartComponent implements OnInit {
   public product: any = [];
   grandtotal!: number;
-  public cartItems: any = [];
   constructor(
     public cartService: CartService,
     private commonService:CommonService,
@@ -49,7 +48,6 @@ export class CartComponent implements OnInit {
   }
   emptyCart() {
     const postsIdsArray = this.product.map((post: { id: any }) => post.id);
-    console.log(postsIdsArray);
     postsIdsArray.forEach((id: any) =>
      {this.removeProduct(id)});
      this.commonService.count();

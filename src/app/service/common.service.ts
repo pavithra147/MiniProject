@@ -16,7 +16,6 @@ export class CommonService {
   count() {
     this.cartService.getProduct().subscribe((res) => {
       this.product = res;
-      console.log(res);
 
       this.productService.sendData(this.product?.length);
     });

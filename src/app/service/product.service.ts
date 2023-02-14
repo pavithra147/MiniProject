@@ -9,13 +9,9 @@ import { products } from 'src/app/service/entities';
 export class productService {
   private subject: BehaviorSubject<any>;
   public obs$: Observable<any>;
-  // private notify:BehaviorSubject<any>;
-  // public obser$:Observable<any>;
   constructor(private http: HttpClient) {
     this.subject = new BehaviorSubject<number>(0);
     this.obs$ = this.subject.asObservable();
-    // this.notify=new BehaviorSubject<any>('');
-    // this.obser$=this.notify.asObservable();
   }
 
   getAllProducts():Observable<products> {
