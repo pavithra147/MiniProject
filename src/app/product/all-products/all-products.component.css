@@ -60,18 +60,10 @@ li{
 .textcolor{
     text-decoration: none;
 }
-/* .whole{
-    margin-left: 5%;
-} */
-/* .brand{
-    
-     position: fixed;
-    width:100%;
-    
-} */
-/* .container{
-    margin-left: 10%;
-} */
+.textcolor:hover{
+    color:coral;
+}
+
 .badge {
     border-radius: 100%;
     border-style: none;

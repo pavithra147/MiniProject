@@ -21,7 +21,7 @@ export class LoginService {
       return false;
     }
   }
-  getUser = () => {
+  getUser(){
     return sessionStorage.getItem('emailId');
   };
   logout() {

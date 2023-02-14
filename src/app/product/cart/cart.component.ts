@@ -1,10 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonService } from 'src/app/common.service';
-import { LoginService } from 'src/app/login-routing/login/login.service';
-import { productService } from '../all-products/product.service';
-import { CartService } from './cart.service';
+import { CommonService } from 'src/app/service/common.service';
+import { CartService } from '../../service/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -18,7 +15,6 @@ export class CartComponent implements OnInit {
   constructor(
     public cartService: CartService,
     private commonService:CommonService,
-    private http:HttpClient,
     private router:Router
   ) {this.product = this.commonService.product}
   ngOnInit() {
@@ -34,7 +30,6 @@ export class CartComponent implements OnInit {
 
   removeProduct(id: any) {
     this.cartService.removeCart(id).subscribe();
-    // this.ngOnInit();
     this.getProduct();
     this.commonService
 .count();  }
@@ -56,8 +51,8 @@ export class CartComponent implements OnInit {
     const postsIdsArray = this.product.map((post: { id: any }) => post.id);
     console.log(postsIdsArray);
     postsIdsArray.forEach((id: any) =>
-    {setTimeout(()=> {this.removeProduct(id);
-      this.commonService.count();},10)});
+     {this.removeProduct(id)});
+     this.commonService.count();
     
   }
 
@@ -68,7 +63,6 @@ export class CartComponent implements OnInit {
   }
   
   get total() {
-    //getter
     return this.product?.reduce(
       (sum: { price: number }, x: { Quantity: number; price: number }) => ({
         price: sum.price + x.Quantity * x.price,

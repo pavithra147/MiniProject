@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Overlay } from 'ngx-toastr';
 
 import { CartComponent } from './cart.component';
-import { CartService } from './cart.service';
+import { CartService } from '../../service/cart.service';
 
 describe('CartComponent', () => {
   let component: CartComponent;

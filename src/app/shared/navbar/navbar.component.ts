@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/product/cart/cart.service';
-import { LoginService } from 'src/app/login-routing/login/login.service';
-import { productService } from 'src/app/product/all-products/product.service';
-import { CommonService } from 'src/app/common.service';
+import { CartService } from 'src/app/service/cart.service';
+import { CommonService } from 'src/app/service/common.service';
+import { LoginService } from 'src/app/service/login.service';
+import { productService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-navbar',

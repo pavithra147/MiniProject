@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CommonService } from 'src/app/common.service';
-import { CartService } from '../cart/cart.service';
-import { productService } from './product.service';
+import { CommonService } from 'src/app/service/common.service';
+import { CartService } from '../../service/cart.service';
+import { productService } from '../../service/product.service';
 
 @Component({
   selector: 'app-all-products',
@@ -16,13 +16,12 @@ export class AllProductsComponent implements OnInit {
   public category: string = '';
   public customer = sessionStorage.getItem('emailId');
   public product: any;
-  
- 
+
   constructor(
     private productService: productService,
     private cartService: CartService,
     private snackBar: MatSnackBar,
-    private commonService:CommonService
+    private commonService: CommonService
   ) {}
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((data: any) => {
@@ -30,33 +29,33 @@ export class AllProductsComponent implements OnInit {
       console.log(data);
     });
     this.check();
-   }
+  }
 
   addtoCart(collect: any) {
-    this.snackBar.open('You Successfully added to the Cart', '', {
-      duration: 4000,
-      verticalPosition: 'top',
-      panelClass: ['blue-snackbar'],
-    });
     console.log(collect);
     collect.emailId = this.customer;
     this.cartService.addToCart(collect).subscribe();
     setTimeout(() => {
       this.check();
     }, 100);
+    if(this.customer){
+    this.snackBar.open('You Successfully added to the Cart', '', {
+      duration: 4000,
+      verticalPosition: 'top',
+      panelClass: ['blue-snackbar'],
+    });}
+    else{
+      this.snackBar.open("Please Login to Continue",'',{duration:4000, verticalPosition:'top',panelClass:['red-snackbar']})
+    }
   }
 
   filter(category: string) {
     this.filterCategory = this.filterCategory.filter((a: any) => {
       if (a.category === category || category == '') {
-        console.log('5678');
-        
         return a;
-   }
-
+      }
     });
   }
- 
 
   check() {
     this.cartService.getProduct().subscribe((res) => {
@@ -74,7 +73,6 @@ export class AllProductsComponent implements OnInit {
       });
     });
 
- 
-  this.commonService.count();
+    this.commonService.count();
   }
 }

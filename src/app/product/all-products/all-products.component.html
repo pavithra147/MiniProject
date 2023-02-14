@@ -1,7 +1,5 @@
 <div class="container">
   <ul class="nav text-align">
-    <!-- <li class="item my-3"><a class="textcolor"(click)="filter('')">All Products</a></li> 
-      -->
     <button type="button" class="badge bg-secondary" routerLink="../">
       <i class="fas fa-arrow-left"></i>
     </button>
@@ -17,42 +15,6 @@
   </ul>
 </div>
 <div class="filterList">
-  <!--<div class="brand">
-      <h5>Brand</h5>
-      <ul>
-         <input type="checkbox" name="check" (click)="categories('Alden Shoes')">&nbsp;
-         <span>Alden Shoes</span>
-         <br>
-         <input type="checkbox"  name="check" (click)="categories('Mephisto')">&nbsp;
-         <span >Mephisto</span>&nbsp;&nbsp;<br>
-         <input type="checkbox" name="check" (click)="categories('Blundstone')">&nbsp;
-         <span>Blundstone</span>&nbsp;<br>
-         <input type="checkbox"name="check" (click)="categories('Oboz')">&nbsp;
-         <span>Oboz</span>
-      </ul>
-      <h5>Color</h5>
-      <ul>
-         <input type="checkbox">&nbsp;
-         <span>Black</span>&nbsp;<br>
-         <input type="checkbox">&nbsp;
-         <span>Brown</span><br>
-         <input type="checkbox">&nbsp;
-         <span>Pink</span>
-      </ul>
-      <h5>Price</h5>
-      <ul>
-         <input type="checkbox">&nbsp;
-         <span>Above 100-200 dollars</span>&nbsp;<br>
-         <input type="checkbox">&nbsp;
-         <span>Above 200-300 dollars</span><br>
-         <input type="checkbox">&nbsp;
-         <span>Above 300-400 dollars</span><br>
-         <input type="checkbox">&nbsp;
-         <span>Above 400-500 dollars</span><br>
-         <input type="checkbox">&nbsp;
-         <span>Above 500-1000 dollars</span>
-      </ul>
-   </div> -->
   <div class="whole">
     <div class="container">
       <div class="row">
@@ -61,8 +23,12 @@
             <img src="{{ collect.image }}" alt="image" />
             <h5>{{ collect.title }}</h5>
             <p><strong>Price:</strong>${{ collect.price }}</p>
-            <button disabled="{{collect.added}}"class="btn btn-primary" (click)="addtoCart(collect)" >
-              {{collect.added ? "Added To cart" :"Add to cart"}}
+            <button
+              disabled="{{ collect.added }}"
+              class="btn btn-primary"
+              (click)="addtoCart(collect)"
+            >
+              {{ collect.added ? "Added To cart" : "Add to cart" }}
             </button>
           </div>
         </ng-container>

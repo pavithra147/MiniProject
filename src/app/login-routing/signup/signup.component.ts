@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { register } from 'src/app/service/entities';
+
 
 @Component({
   selector: 'app-signup',
@@ -62,10 +64,10 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  registerDetails() {
+  registerDetails(){
     const postData = this.registerForm.value;
     this.http
-      .post('http://localhost:3000/register', postData)
+      .post<register[]>('http://localhost:3000/register', postData)
       .subscribe((data) => {
         console.log(data);
 

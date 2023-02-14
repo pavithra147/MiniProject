@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
-import { addtocart } from 'src/app/entities';
+import { Observable } from 'rxjs';
+import { addtocart } from 'src/app/service/entities';
 
 
 @Injectable()
@@ -28,7 +28,4 @@ export class CartService {
     return this.http.put<addtocart[]>(`http://localhost:3000/addtocart/${pid}`, product);
   }
 
-  checkOut(product: any) {
-    return this.http.post('http://localhost:3000/checkout', product);
-  }
 }

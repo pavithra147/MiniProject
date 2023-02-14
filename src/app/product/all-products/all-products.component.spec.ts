@@ -1,7 +1,7 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CartService } from '../cart/cart.service';
+import { CartService } from '../../service/cart.service';
 
 import { AllProductsComponent } from './all-products.component';
 

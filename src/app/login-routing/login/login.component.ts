@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { register } from 'src/app/service/entities';
 //import { AuthService } from 'src/app/auth.service';
 
 @Component({
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
     });
   }
   submit() {
-    this.http.get<any>('http://localhost:3000/register').subscribe({
+    this.http.get<register[]>('http://localhost:3000/register').subscribe({
       next: (res) => {
         console.log('response', res);
         const user = res.find((a: any) => {

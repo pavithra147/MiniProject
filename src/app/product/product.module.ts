@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AllProductsComponent } from './all-products/all-products.component';
-import { productService } from './all-products/product.service';
-import { CartService } from './cart/cart.service';
+import { productService } from '../service/product.service';
+import { CartService } from '../service/cart.service';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductRoutingModule } from '../product-routing/product-routing.module';
