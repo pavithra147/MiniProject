@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonService } from 'src/app/service/common.service';
@@ -23,11 +22,16 @@ export class AllProductsComponent implements OnInit {
     private snackBar: MatSnackBar,
     private commonService: CommonService
   ) {}
+
   ngOnInit(): void {
+    this.getAllProducts();
+    this.check();
+  }
+
+  getAllProducts() {
     this.productService.getAllProducts().subscribe((data: any) => {
       this.collection = data;
     });
-    this.check();
   }
 
   addtoCart(collect: any) {
@@ -37,26 +41,26 @@ export class AllProductsComponent implements OnInit {
     setTimeout(() => {
       this.check();
     }, 100);
-    if(this.customer){
-    this.snackBar.open('You Successfully added to the Cart', '', {
-      duration: 4000,
-      verticalPosition: 'top',
-      panelClass: ['blue-snackbar'],
-    });}
-    else{
-      this.snackBar.open("Please Login to Continue",'',{duration:4000, verticalPosition:'top',panelClass:['red-snackbar']})
+    if (this.customer) {
+      this.snackBar.open('You Successfully added to the Cart', '', {
+        duration: 4000,
+        verticalPosition: 'top',
+        panelClass: ['blue-snackbar'],
+      });
+    } else {
+      this.snackBar.open('Please Login to Continue', '', {
+        duration: 4000,
+        verticalPosition: 'top',
+        panelClass: ['red-snackbar'],
+      });
     }
   }
 
   filter(category: string) {
-    this.filterCategory = this.filterCategory.filter((a: any) => {
-      if (a.category === category || category == '') {
-        return a;
-      }
-    });
+    this.check(category)
   }
 
-  check() {
+  check(category?:any) {
     this.cartService.getProduct().subscribe((res) => {
       this.productService.getAllProducts().subscribe((res1) => {
         this.filterCategory = res1;
@@ -68,6 +72,14 @@ export class AllProductsComponent implements OnInit {
               }
             });
           });
+        }
+        if(category){
+          this.filterCategory = this.filterCategory.filter((a: any) => {
+            if (a.category === category || category === '') {
+              return a;
+            }
+          });
+    
         }
       });
     });

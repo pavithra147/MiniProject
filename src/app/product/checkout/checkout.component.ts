@@ -11,10 +11,6 @@ import { CommonService } from 'src/app/service/common.service';
 })
 export class CheckoutComponent implements OnInit {
   public checkOutForm!: FormGroup;
-  public user: any;
-  public submitted = false;
-  public cartList: any;
-  public product: any;
   constructor(
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,

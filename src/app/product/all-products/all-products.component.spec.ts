@@ -8,6 +8,7 @@ import { AllProductsComponent } from './all-products.component';
 describe('AllProductsComponent', () => {
   let component: AllProductsComponent;
   let fixture: ComponentFixture<AllProductsComponent>;
+  
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,4 +25,5 @@ describe('AllProductsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+ 
 });
