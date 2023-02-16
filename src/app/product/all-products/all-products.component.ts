@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { CommonService } from 'src/app/service/common.service';
 import { CartService } from '../../service/cart.service';
 import { productService } from '../../service/product.service';
@@ -20,7 +21,8 @@ export class AllProductsComponent implements OnInit {
     private productService: productService,
     private cartService: CartService,
     private snackBar: MatSnackBar,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +37,6 @@ export class AllProductsComponent implements OnInit {
   }
 
   addtoCart(collect: any) {
-    console.log(collect);
     collect.emailId = this.customer;
     this.cartService.addToCart(collect).subscribe();
     setTimeout(() => {
@@ -57,10 +58,10 @@ export class AllProductsComponent implements OnInit {
   }
 
   filter(category: string) {
-    this.check(category)
+    this.check(category);
   }
 
-  check(category?:any) {
+  check(category?: any) {
     this.cartService.getProduct().subscribe((res) => {
       this.productService.getAllProducts().subscribe((res1) => {
         this.filterCategory = res1;
@@ -73,17 +74,19 @@ export class AllProductsComponent implements OnInit {
             });
           });
         }
-        if(category){
+        if (category) {
           this.filterCategory = this.filterCategory.filter((a: any) => {
             if (a.category === category || category === '') {
               return a;
             }
           });
-    
         }
       });
     });
 
     this.commonService.count();
+  }
+  goToTop() {
+    window.scroll(0, 0);
   }
 }

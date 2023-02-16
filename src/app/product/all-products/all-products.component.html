@@ -24,11 +24,11 @@
             <h5>{{ collect.title }}</h5>
             <p><strong>Price:</strong>${{ collect.price }}</p>
             <button
-              disabled="{{ collect.added }}"
+              [disabled]="collect.added"
               class="btn btn-primary"
               (click)="addtoCart(collect)"
             >
-              {{ collect.added ? "Added To cart" : "Add to cart" }}
+              {{ collect.added ? "Add to Cart" : "Add to Cart" }}
             </button>
           </div>
         </ng-container>
@@ -36,3 +36,4 @@
     </div>
   </div>
 </div>
+<button class="top" (click)="goToTop()"><i class="fas fa-arrow-up"></i></button>
