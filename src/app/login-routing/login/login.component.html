@@ -33,7 +33,23 @@
       >Enter email in correct format</small
     >
   </div>
+  
+  <div class="form-group my-3">
+    <label>Mobile</label>
+    <input
+      class="form-control"
+      type="tel"
+      placeholder="Enter MobileNo"
+      formControlName="mobile"
+    
+    />
+  <div *ngIf="loginForm.get('email')?.invalid" >
 
+    <small  >
+
+    </small>
+  </div>
+  </div>
   <div class="form-group my-3">
     <label>Password</label>
     <input
