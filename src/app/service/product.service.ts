@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { products } from 'src/app/service/dataType';
 
 @Injectable({
@@ -14,8 +14,8 @@ export class productService {
     this.obs$ = this.subject.asObservable();
   }
 
-  getAllProducts():Observable<products> {
-    return this.http.get<products>('http://localhost:3000/products').pipe(
+  getAllProducts():Observable<products[]> {
+    return this.http.get<products[]>('http://localhost:3000/products').pipe(
       map((res: any) => {
         return res;
       })
