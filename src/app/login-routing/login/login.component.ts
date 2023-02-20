@@ -24,15 +24,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.form.group({
       email: ['', [Validators.required, Validators.email]],
-      mobile:[{value:'',disabled:true}],
+      mobile:[''],
       password: ['', Validators.required],
     });
   }
-  allow(){
-    if(this.loginForm.value.email===''){
-      this.able=true;
-    }
-  }
+  
+  
   submit() {
     this.http.get<register[]>('http://localhost:3000/register').subscribe({
       next: (res) => {

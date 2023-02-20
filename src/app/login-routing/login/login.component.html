@@ -18,9 +18,11 @@
       "
       formControlName="email"
     />
+    
   </div>
 
   <div
+
     class="error"
     *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
   >
@@ -32,23 +34,17 @@
     <small *ngIf="loginForm.get('email')?.errors?.['email']" class="text-danger"
       >Enter email in correct format</small
     >
-  </div>
+  </div> 
   
-  <div class="form-group my-3">
+  <div class="form-group my-3" >
     <label>Mobile</label>
     <input
       class="form-control"
       type="tel"
       placeholder="Enter MobileNo"
       formControlName="mobile"
-    
+      
     />
-  <div *ngIf="loginForm.get('email')?.invalid" >
-
-    <small  >
-
-    </small>
-  </div>
   </div>
   <div class="form-group my-3">
     <label>Password</label>
