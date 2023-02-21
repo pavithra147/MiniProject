@@ -6,6 +6,7 @@
   <div class="text-dark">
     <h1>Sign IN</h1>
   </div>
+  <ng-container *ngIf="!loginForm.get('email')?.errors?.['disable']">
   <div class="form-group my-3">
     <label>Email address</label>
     <input
@@ -34,8 +35,11 @@
     <small *ngIf="loginForm.get('email')?.errors?.['email']" class="text-danger"
       >Enter email in correct format</small
     >
+   
   </div> 
+</ng-container>
   
+  <ng-container *ngIf="!loginForm.get('mobile')?.errors?.['disable']">
   <div class="form-group my-3" >
     <label>Mobile</label>
     <input
@@ -43,9 +47,13 @@
       type="tel"
       placeholder="Enter MobileNo"
       formControlName="mobile"
-      
-    />
-  </div>
+      [class.is-invalid]="
+      loginForm.get('mobile')?.invalid &&
+      loginForm.get('mobile')?.touched
+    "/>
+
+</div>
+</ng-container>
   <div class="form-group my-3">
     <label>Password</label>
     <input

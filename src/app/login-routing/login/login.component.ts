@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { register } from 'src/app/service/dataType';
@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
   public data: any;
   public able!:boolean;
+email: any;
   constructor(
     private form: FormBuilder,
     private http: HttpClient,
@@ -26,10 +27,30 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       mobile:[''],
       password: ['', Validators.required],
-    });
+    },{validators:this.disable('email','password')});
   }
   
+  disable(email:string,mobile:string){
+    return(form:AbstractControl):{[key:string]:any}|null =>{
+      const email=form.get('email');
+      const mobile=form.get('mobile');
+      if(email?.value !== ''){
+         mobile?.setErrors({disable:true})
+         return{disable:true}
+      }
+      // if(mobile?.value!== ''){
+      //   email?.setErrors({disable:true});
+      //   return{disable:true}
+       
+      // }
+      else{
+        return null
+      }
+      
+    }
+  }
   
+
   submit() {
     this.http.get<register[]>('http://localhost:3000/register').subscribe({
       next: (res) => {
