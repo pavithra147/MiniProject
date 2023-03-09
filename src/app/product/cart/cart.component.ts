@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
   getProduct(){
     this.cartService.getProduct().subscribe(res=>{
       this.product = res;
+      
     })
   }
 

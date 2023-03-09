@@ -1,10 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { register } from 'src/app/service/dataType';
-
 
 @Component({
   selector: 'app-login',
@@ -14,8 +18,9 @@ import { register } from 'src/app/service/dataType';
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
   public data: any;
-  public able!:boolean;
-email: any;
+  public able!: boolean;
+  public search!: string;
+  email: any;
   constructor(
     private form: FormBuilder,
     private http: HttpClient,
@@ -23,34 +28,44 @@ email: any;
     private snackBar: MatSnackBar
   ) {}
   ngOnInit(): void {
-    this.loginForm = this.form.group({
-      email: ['', [Validators.required, Validators.email]],
-      mobile:[''],
-      password: ['', Validators.required],
-    },{validators:this.disable('email','password')});
+    this.loginForm = this.form.group(
+      {
+        email: ['', [Validators.required, Validators.email]],
+        mobile: [''],
+        password: ['', Validators.required],
+      },
+      { validators: this.disable('email', 'password') }
+    );
   }
-  
-  disable(email:string,mobile:string){
-    return(form:AbstractControl):{[key:string]:any}|null =>{
-      const email=form.get('email');
-      const mobile=form.get('mobile');
-      if(email?.value !== ''){
-         mobile?.setErrors({disable:true})
-         return{disable:true}
-      }
-      // if(mobile?.value!== ''){
-      //   email?.setErrors({disable:true});
-      //   return{disable:true}
-       
-      // }
-      else{
-        return null
-      }
-      
-    }
-  }
-  
 
+  disable(email: string, mobile: string) {
+    return (form: AbstractControl): { [key: string]: any } | null => {
+      const email = form.get('email');
+      const mobile = form.get('mobile');
+
+      if (email?.value !== '') {
+        mobile?.setErrors({ disable: true });
+        return { disable: true };
+      }
+      if (mobile?.value !== '') {
+        email?.setErrors({ disable1: true });
+        return { disable1: true };
+      }
+    
+
+      if (email?.value == '') {
+        mobile?.setErrors({ disable: false });
+        return { disable: false };
+      } 
+      if (mobile?.value == '') {
+        email?.setErrors({ disable1: false });
+        return { disable1: false };
+      }
+      else {
+        return null;
+      }
+    };
+  }
   submit() {
     this.http.get<register[]>('http://localhost:3000/register').subscribe({
       next: (res) => {
@@ -61,7 +76,7 @@ email: any;
             a.password === this.loginForm.value.password
           );
         });
-       
+
         if (user) {
           this.snackBar.open('Login Success', '', {
             duration: 3000,
@@ -77,8 +92,6 @@ email: any;
             panelClass: ['red-snackbar'],
           });
         }
-      
-       
       },
       error: (e) =>
         this.snackBar.open('Something went wrong', '', {
@@ -87,6 +100,5 @@ email: any;
           panelClass: ['blue-snackbar'],
         }),
     });
-
   }
 }
