@@ -335,22 +335,5 @@
       "Quantity": 1
     }
   ],
-  "addtocart": [
-    {
-      "pid": 1,
-      "title": "Alden Men's D1954HC Handsewn Moc Toe Boot Arabic Lux",
-      "price": 900,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "Men",
-      "brand": "Alden Shoes",
-      "image": "https://i.ebayimg.com/thumbs/images/g/NAgAAOSwmmVjj6~c/s-l300.jpg",
-      "rating": {
-        "rate": 3.9,
-        "count": 120
-      },
-      "Quantity": 1,
-      "emailId": "priya089@gmail.com",
-      "id": 1
-    }
-  ]
+  "addtocart": []
 }

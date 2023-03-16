@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   title = 'ecommercewebsite';
-  constructor(private router:Router){}
+  constructor(public router:Router){}
   move(){
     this.router.navigate(['/home']);
   }

@@ -69,4 +69,6 @@ export class CartComponent implements OnInit {
       { Quantity: 0, price: 0 }
     ).price;
   }
-}
+  }
+
+

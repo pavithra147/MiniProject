@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   public able!: boolean;
   public search!: string;
   email: any;
+  public submitt =false
   constructor(
     private form: FormBuilder,
     private http: HttpClient,
@@ -67,6 +68,8 @@ export class LoginComponent implements OnInit {
     };
   }
   submit() {
+    if((this.loginForm.get('email')?.valid && this.loginForm.get('password')?.valid && this.loginForm.get('mobile')?.invalid) || (this.loginForm.get('email')?.invalid && this.loginForm.get('password')?.valid && this.loginForm.get('mobile')?.valid)){
+    this.submitt =true
     this.http.get<register[]>('http://localhost:3000/register').subscribe({
       next: (res) => {
         console.log('response', res);
@@ -101,4 +104,5 @@ export class LoginComponent implements OnInit {
         }),
     });
   }
+}
 }
