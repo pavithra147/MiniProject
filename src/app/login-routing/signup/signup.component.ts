@@ -76,8 +76,8 @@ export class SignupComponent implements OnInit {
     const postData = this.registerForm.value;
     this.http
       .post<register[]>('http://localhost:3000/register', postData)
-      .subscribe((data) => {
-        console.log(data);
+      .subscribe( {
+     next:(data)=>{   console.log(data);
 
         this.SnackBar.open('SignUp is Successful', '', {
           duration: 4000,
@@ -86,6 +86,13 @@ export class SignupComponent implements OnInit {
         });
         this.router.navigate(['login']);
         this.registerForm.reset();
+      },error:(e:any)=>{
+        this.SnackBar.open('Something went wrong', '', {
+          duration: 4000,
+          verticalPosition: 'top',
+          panelClass: ['red-snackbar'],
+        });
+      }
       });
   }
 }

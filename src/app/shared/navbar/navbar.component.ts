@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 import { CommonService } from 'src/app/service/common.service';
@@ -21,10 +22,16 @@ export class NavbarComponent implements OnInit {
     public cartService: CartService,
     public loginService: LoginService,
     private productService: productService,
-    private commonService:CommonService
+    private commonService:CommonService,
+    private snackBar:MatSnackBar
   ) {
-    this.productService.obs$.subscribe((x) => {
-      this.count = x;
+    this.productService.obs$.subscribe( {
+      next:(x)=>{this.count = x;},
+      error:(e)=>{this.snackBar.open('Something went wrong', '', {
+        duration: 4000,
+        verticalPosition: 'top',
+        panelClass: ['red-snackbar'],
+      });}
     });
   }
 

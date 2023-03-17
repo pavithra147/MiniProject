@@ -26,7 +26,16 @@ export class AllProductsComponent implements OnInit {
   }
   addtoCart(collect: any) {
     collect.emailId = this.customer;
-    this.cartService.addToCart(collect).subscribe();
+    this.cartService.addToCart(collect).subscribe({
+      next:(value:any)=>{},
+      error:(error:any)=>{
+        this.snackBar.open('Something went wrong', '', {
+          duration: 4000,
+          verticalPosition: 'top',
+          panelClass: ['red-snackbar'],
+        });
+      }
+    });
     setTimeout(() => {
       this.check();
     }, 100);
@@ -36,13 +45,7 @@ export class AllProductsComponent implements OnInit {
         verticalPosition: 'top',
         panelClass: ['blue-snackbar'],
       });
-    } else {
-      this.snackBar.open('Please Login to Continue', '', {
-        duration: 4000,
-        verticalPosition: 'top',
-        panelClass: ['red-snackbar'],
-      });
-    }
+    } 
   }
 
   filter(category: string) {
@@ -50,9 +53,9 @@ export class AllProductsComponent implements OnInit {
   }
 
   check(category?: any) {
-    this.cartService.getProduct().subscribe((res) => {
-      this.productService.getAllProducts().subscribe((res1) => {
-        this.collectionList = res1;
+    this.cartService.getProduct().subscribe({
+    next:(res)=>{  this.productService.getAllProducts().subscribe( {
+      next:(res1)=>{  this.collectionList = res1;
        if (Array.isArray(res1) && Array.isArray(res)) {
           res1.forEach((a: any, i: any) => {
             res.forEach((b: any) => {
@@ -69,7 +72,23 @@ export class AllProductsComponent implements OnInit {
             }
           });
         }
+      },
+      error:(e:any)=>{
+        this.snackBar.open('Something went wrong', '', {
+          duration: 4000,
+          verticalPosition: 'top',
+          panelClass: ['red-snackbar'],
+        });
+      }
       });
+    },
+    error:(e:any)=>{
+      this.snackBar.open('Something went wrong', '', {
+        duration: 4000,
+        verticalPosition: 'top',
+        panelClass: ['red-snackbar'],
+      });
+    }
     });
 
     this.commonService.count();

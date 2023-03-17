@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { products } from 'src/app/service/dataType';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class productService {
+  public baseUrl=environment.apiUrl;
   private subject: BehaviorSubject<any>;
   public obs$: Observable<any>;
   constructor(private http: HttpClient) {
@@ -15,7 +17,7 @@ export class productService {
   }
 
   getAllProducts():Observable<products[]> {
-    return this.http.get<products[]>('http://localhost:3000/products').pipe(
+    return this.http.get<products[]>(`${this.baseUrl}/products`).pipe(
       map((res: any) => {
         return res;
       })

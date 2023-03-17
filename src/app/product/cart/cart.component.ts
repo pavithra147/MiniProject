@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/service/common.service';
 import { CartService } from '../../service/cart.service';
@@ -14,7 +15,8 @@ export class CartComponent implements OnInit {
   constructor(
     public cartService: CartService,
     private commonService:CommonService,
-    private router:Router
+    private router:Router,
+    private snackBar:MatSnackBar
   ) {this.product = this.commonService.product}
   ngOnInit() {
     this.getProduct();
@@ -22,14 +24,30 @@ export class CartComponent implements OnInit {
     
   }
   getProduct(){
-    this.cartService.getProduct().subscribe(res=>{
-      this.product = res;
+    this.cartService.getProduct().subscribe({
+     next:(res)=>{ this.product = res;},
+     error:(e)=>{
+      this.snackBar.open('Something went wrong', '', {
+        duration: 4000,
+        verticalPosition: 'top',
+        panelClass: ['red-snackbar'],
+      });
+     }
       
     })
   }
 
   removeProduct(id: any) {
-    this.cartService.removeCart(id).subscribe();
+    this.cartService.removeCart(id).subscribe(
+      {
+        next:(value)=>{},
+        error:(e)=>{  this.snackBar.open('something went wrong', '', {
+          duration: 4000,
+          verticalPosition: 'top',
+          panelClass: ['red-snackbar'],
+        });}
+      }
+    );
     this.getProduct();
     this.commonService
 .count();  }
@@ -37,13 +55,31 @@ export class CartComponent implements OnInit {
   incrementQuantity(products: any) {
     if (products.Quantity != 10) {
       products.Quantity = products.Quantity + 1;
-      this.cartService.quantityIncrement(products.id, products).subscribe();
+      this.cartService.quantityIncrement(products.id, products).subscribe(
+        {
+          next:(value)=>{},
+          error:(e)=>{  this.snackBar.open('something went wrong', '', {
+            duration: 4000,
+            verticalPosition: 'top',
+            panelClass: ['red-snackbar'],
+          });}
+        }
+      );
     }
   }
   decrementQuantity(products: any) {
     if (products.Quantity != 1) {
       products.Quantity = products.Quantity - 1;
-      this.cartService.quantityDecrement(products.id, products).subscribe();
+      this.cartService.quantityDecrement(products.id, products).subscribe(
+        {
+          next:(value)=>{},
+          error:(e)=>{  this.snackBar.open('something went wrong', '', {
+            duration: 4000,
+            verticalPosition: 'top',
+            panelClass: ['red-snackbar'],
+          });}
+        }
+      );
     }
   
   }
