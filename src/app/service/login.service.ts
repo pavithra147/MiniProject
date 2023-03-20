@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Overlay } from '@angular/cdk/overlay'
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
   validate!: boolean;
-  constructor(private router: Router, private snackBar: MatSnackBar) {}
+  constructor(private router: Router, private snackBar: MatSnackBar,private overlay:Overlay) {}
 
   getUserName() {
     const userName = sessionStorage.getItem('emailId');

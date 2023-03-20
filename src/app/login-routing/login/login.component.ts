@@ -9,7 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { register } from 'src/app/service/dataType';
-
+import { Overlay } from '@angular/cdk/overlay'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
     private form: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private overlay:Overlay
   ) {}
   ngOnInit(): void {
     this.loginForm = this.form.group(

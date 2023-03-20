@@ -2,7 +2,7 @@ import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from '../../service/cart.service';
-
+import { Overlay} from '@angular/cdk/overlay'
 import { CheckoutComponent } from './checkout.component';
 
 describe('CheckoutComponent', () => {
@@ -12,7 +12,7 @@ describe('CheckoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ CheckoutComponent ] , 
-      providers:[CartService, HttpClient , HttpHandler, MatSnackBar]
+      providers:[CartService, HttpClient , HttpHandler, MatSnackBar,Overlay]
     })
     .compileComponents();
 

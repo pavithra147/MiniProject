@@ -1,7 +1,7 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Overlay } from 'ngx-toastr';
+import { Overlay } from '@angular/cdk/overlay';
 
 import { CartComponent } from './cart.component';
 import { CartService } from '../../service/cart.service';

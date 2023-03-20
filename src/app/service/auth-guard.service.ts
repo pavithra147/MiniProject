@@ -7,7 +7,7 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { LoginService } from './login.service';
-
+import { Overlay } from '@angular/cdk/overlay'
 
 @Injectable({
   providedIn: 'root',
@@ -16,12 +16,10 @@ export class AuthGuardService implements CanActivate {
   constructor(
     private router: Router,
     private loginService: LoginService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private  overlay:Overlay
   ) {}
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): boolean {
+  canActivate(): boolean {
     if (this.loginService.login()) {
       return true;
     } else {

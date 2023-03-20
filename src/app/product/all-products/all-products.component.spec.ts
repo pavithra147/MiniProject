@@ -1,6 +1,7 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Overlay } from '@angular/cdk/overlay'
 import { CartService } from '../../service/cart.service';
 
 import { AllProductsComponent } from './all-products.component';
@@ -13,7 +14,7 @@ describe('AllProductsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ AllProductsComponent ],
-      providers:[HttpClient,HttpHandler,CartService , MatSnackBar]
+      providers:[HttpClient,HttpHandler,CartService , MatSnackBar,Overlay]
     })
     .compileComponents();
 

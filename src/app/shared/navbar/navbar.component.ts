@@ -5,7 +5,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { CommonService } from 'src/app/service/common.service';
 import { LoginService } from 'src/app/service/login.service';
 import { productService } from 'src/app/service/product.service';
-
+import { Overlay } from '@angular/cdk/overlay'
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -23,7 +23,8 @@ export class NavbarComponent implements OnInit {
     public loginService: LoginService,
     private productService: productService,
     private commonService:CommonService,
-    private snackBar:MatSnackBar
+    private snackBar:MatSnackBar,
+    private overlay:Overlay
   ) {
     this.productService.obs$.subscribe( {
       next:(x)=>{this.count = x;},

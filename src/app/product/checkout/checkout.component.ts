@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonService } from 'src/app/service/common.service';
-
+import { Overlay } from '@angular/cdk/overlay'
 
 @Component({
   selector: 'app-checkout',
@@ -14,7 +14,8 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private overlay:Overlay
   ) {}
   ngOnInit() {
     this.checkOutForm = this.formBuilder.group({

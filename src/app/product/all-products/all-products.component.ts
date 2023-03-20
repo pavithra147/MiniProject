@@ -4,7 +4,7 @@ import { CommonService } from 'src/app/service/common.service';
 import { addtocart } from 'src/app/service/dataType';
 import { CartService } from '../../service/cart.service';
 import { productService } from '../../service/product.service';
-
+import { Overlay } from '@angular/cdk/overlay'
 @Component({
   selector: 'app-all-products',
   templateUrl: './all-products.component.html',
@@ -18,7 +18,8 @@ export class AllProductsComponent implements OnInit {
     private productService: productService,
     private cartService: CartService,
     private snackBar: MatSnackBar,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private overlay:Overlay
   ) {}
 
   ngOnInit(): void {

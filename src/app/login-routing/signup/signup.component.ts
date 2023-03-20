@@ -4,14 +4,13 @@ import {
   AbstractControl,
   FormBuilder,
   FormGroup,
-  ValidatorFn,
-  Validators,
+  Validators
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { register } from 'src/app/service/dataType';
 import { CommonService } from 'src/app/service/common.service';
-
+import { Overlay } from '@angular/cdk/overlay'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -24,7 +23,8 @@ export class SignupComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private SnackBar: MatSnackBar,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private overlay:Overlay
   ) {}
 
   ngOnInit(): void {

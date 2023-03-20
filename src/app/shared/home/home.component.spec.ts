@@ -20,4 +20,7 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("",()=>{
+    component.goToTop()
+  })
 });

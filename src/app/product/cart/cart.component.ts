@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CommonService } from 'src/app/service/common.service';
 import { CartService } from '../../service/cart.service';
-
+import { Overlay } from '@angular/cdk/overlay'
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -16,7 +16,8 @@ export class CartComponent implements OnInit {
     public cartService: CartService,
     private commonService:CommonService,
     private router:Router,
-    private snackBar:MatSnackBar
+    private snackBar:MatSnackBar,
+    private overlay:Overlay
   ) {this.product = this.commonService.product}
   ngOnInit() {
     this.getProduct();
